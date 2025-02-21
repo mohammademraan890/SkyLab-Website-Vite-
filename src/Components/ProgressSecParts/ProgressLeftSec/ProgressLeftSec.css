@@ -1,0 +1,14 @@
+.progress-section-left {
+    background-color: var(--primary-color);
+    padding: 40px;
+  }
+  .progress-section-left h1 {
+    margin-bottom: 15px;
+    color: var(--rare-color);
+  }
+  .progress-section-left-desc {
+    color: var(--txt-color);
+  }
+  .progress-left-card-sec {
+    padding: 30px 0 0;
+  }

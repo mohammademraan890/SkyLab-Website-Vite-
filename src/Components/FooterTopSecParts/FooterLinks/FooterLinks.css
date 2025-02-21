@@ -1,0 +1,20 @@
+.footer-right-links {
+    padding: 0;
+  }
+  .footer-right-links-sec h3 {
+    color: var(--primary-color);
+    font-size: 18px;
+    margin-bottom: 25px;
+  }
+  .footer-right-links a {
+    color: var(--txt-color);
+  }
+  .footer-right-links a svg {
+    height: 12px;
+    width: 12px;
+    fill: var(--txt-color);
+    margin-right: 5px;
+  }
+  .footer-right-links li {
+    margin-bottom: 11px;
+  }

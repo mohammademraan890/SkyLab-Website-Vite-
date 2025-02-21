@@ -1,0 +1,41 @@
+.counter-left-img-sec {
+    width: fit-content;
+    position: relative;
+  }
+  .counter-left-item {
+    height: 50%;
+    width: 50%;
+    max-height: 280px;
+    max-width: 280px;
+    object-fit: cover;
+  }
+  .counter-left-bottom-content {
+    position: absolute;
+    background-color: var(--secondary-color);
+    left: 40%;
+    top: 40%;
+  }
+  .counter-left-bottom-icon svg {
+    fill: var(--rare-color);
+    height: 50px;
+    width: 50px;
+    position: relative;
+    z-index: 11;
+  }
+  .counter-left-bottom-icon .circle {
+    background-color: var(--primary-color);
+    position: absolute;
+    bottom: -10px;
+    left: -5px;
+    z-index: 10;
+  }
+  
+  .counter-left-bottom-title {
+    font-size: clamp(30px, 5vw, 55px);
+    margin: 22px 0px 13px 0px;
+    color: var(--primary-color);
+  }
+  .counter-left-bottom-desc {
+    color: var(--primary-color);
+    font-size: 16px;
+  }

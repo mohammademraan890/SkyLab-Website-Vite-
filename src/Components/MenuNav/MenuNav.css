@@ -1,0 +1,48 @@
+.menuNav {
+    height: 55px;
+    z-index: 100;
+    position: absolute;
+    bottom: -28px;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  .menuNav.active {
+    position: fixed;
+    top: 0;
+    margin: 0;
+    width: 100vw;
+    background-color: var(--primary-color);
+    box-shadow: var(--box-shadow);
+    z-index: 100000;
+  }
+  .menuNav-container {
+    background-color: var(--primary-color);
+    height: 100%;
+  }
+  .menuNav-container ul li {
+    margin-right: 30px;
+  }
+  .menuNav-container ul li a {
+    color: var(--txt-color2);
+    font-weight: 500;
+    font-size: clamp(12px,1vw,15px);
+  }
+  .menuNav .activeLink{
+    color: var(--secondary-color) ;
+  }
+  .dropdown svg {
+    height: 10px;
+    width: 9px;
+    margin-left: 5px;
+  }
+  .dropdown-toggle::after {
+    display: none;
+  }
+  .dropdown-item:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+  }
+  .dropdown ul li {
+    margin: 0;
+  }

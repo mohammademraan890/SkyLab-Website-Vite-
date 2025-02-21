@@ -1,0 +1,8 @@
+.footer {
+    background-color: var(--rare-color);
+    background: linear-gradient(to bottom, rgba(2, 27, 82, 0.95), rgb(2, 27, 82, 0.95)),
+  url("https://img.freepik.com/free-vector/worldmap-background-design_1127-2318.jpg?t=st=1732790949~exp=1732794549~hmac=54cbd0cb805ceaed370ce6fc632c42b92f344083313c6bd9bcadbf5be22a8609&w=740")
+    no-repeat center/cover;
+   border-bottom: 1px dotted var(--txt-color);
+
+}

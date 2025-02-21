@@ -1,0 +1,14 @@
+.services-section-card-btn {
+    font-size: 15px;
+    margin-top: 20px;
+  }
+  .services-section-card-btn a {
+    color: var(--txt-color2);
+    background-color: rgb(231, 238, 250);
+    padding: 8px 15px;
+    display: inline-block;
+  }
+  .services-section-card-btn svg {
+    height: 13px;
+    width: 13px;
+  }

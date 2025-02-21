@@ -1,0 +1,30 @@
+.about-sec {
+    margin-bottom: var(--section-bottom-margin);
+  }
+  .about-sec-content {
+    padding-left: 5%;
+  }
+  .about-sec-content h1 {
+    color: var(--rare-color);
+    margin-bottom: 16px;
+  }
+  .about-sec-subtitle {
+    color: var(--txt-color);
+    margin-bottom: 40px;
+  }
+  .about-sec-content h3 {
+    font-size: clamp(16px, 2.1vw, 26px);
+    color: var(--rare-color);
+    margin-bottom: 20px;
+  }
+  .about-sec-desc {
+    color: var(--txt-color);
+    margin-bottom: 16px;
+  }
+  .about-sec-content .menuNav-socialLinks a {
+    padding: 13px;
+  }
+  .about-sec-content .menuNav-socialLinks svg {
+    height: 15px;
+    width: 15px;
+  }

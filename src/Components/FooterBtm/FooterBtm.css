@@ -1,0 +1,10 @@
+.footer-bottom {
+    background-color: var(--rare-color);
+  }
+  .footer-bottom p {
+    color: var(--txt-color);
+    padding: 25px 0px;
+  }
+  .footer-bottom p span {
+    color: white;
+  }

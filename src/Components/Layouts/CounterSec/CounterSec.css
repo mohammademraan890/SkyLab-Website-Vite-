@@ -1,0 +1,10 @@
+.counter-section {
+    margin-bottom: var(--section-bottom-margin);
+  }
+  .counter-sec-right{
+    padding-left: 2%;
+  }
+ 
+  .counter-sec-right .counter-right-desc-sec {
+    color: var(--txt-color);
+  }

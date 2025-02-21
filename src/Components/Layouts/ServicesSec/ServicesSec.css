@@ -1,0 +1,77 @@
+.services-section {
+    padding-bottom: var(--section-bottom-margin);
+    overflow: hidden;
+    position: relative;
+    padding-top: 60px;
+  }
+  .background-top-img {
+    background-image: url(/Assests//assets/canvaImg.jpg);
+    position: absolute;
+    height: 2000px;
+    width: 2000px;
+    z-index: -1;
+    transform: translateY(-77%) translateX(-30%) rotate(-13deg);
+  }
+  .services-sec-top-desc {
+    color: var(--txt-color);
+    width: 500px;
+    margin-top: 15px;
+    max-width: 90%;
+  }
+  .services-section-cards-sec {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 20px;
+    column-gap: 15px;
+  }
+  .services-section .properties-section-card {
+    border: none;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s;
+    box-shadow: var(--box-shadow);
+    padding: 40px 30px;
+    background-color: var(--primary-color);
+    z-index: 23;
+  }
+  .services-section .properties-section-card * {
+    transition: all 0.2s;
+  }
+  .properties-sec-overlay {
+    height: 100%;
+    width: 100%;
+    background-color: var(--secondary-color);
+    position: absolute;
+    top: -500px;
+    right: 0;
+    z-index: -1;
+    left: 0;
+    transition: all 0.5s !important;
+  }
+  .services-section .properties-section-card:hover .properties-sec-overlay {
+    top: 0;
+  }
+  .services-section .properties-section-card:hover {
+    p {
+      color: white;
+    }
+    .properties-section-card-top svg {
+      fill: white;
+    }
+    .properties-section-card-top .circle {
+      background-color: var(--secondary-color);
+    }
+    h4 {
+      color: var(--primary-color);
+    }
+  }
+  .services-section
+    .properties-section-card:hover
+    .properties-section-card-top
+    .circle {
+    background-color: var(--rare-color);
+  }
+  .service-sec-card-outer {
+    padding: 0;
+  }

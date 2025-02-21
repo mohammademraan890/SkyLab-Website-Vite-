@@ -1,0 +1,8 @@
+.testimonial-sec-left {
+    margin-bottom: 60px;
+  }
+ 
+  .testimonial-sec-left p {
+    margin-bottom: 32px;
+    color: var(--primary-color);
+  }

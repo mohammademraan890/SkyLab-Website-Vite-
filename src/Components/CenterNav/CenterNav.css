@@ -1,0 +1,18 @@
+.centerNav {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding-top: 14px;
+    height: 100px;
+  }
+  .centerNav a {
+    color: var(--primary-color);
+  }
+  .centerNav svg {
+    height: 28px;
+    width: 28px;
+    margin-right: 10px;
+  }
+  .centerNav-left-text span:first-child,
+  .centerNav-right-text span:first-child {
+    font-size: 18px;
+  }

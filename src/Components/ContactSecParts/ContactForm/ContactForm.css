@@ -1,0 +1,52 @@
+.form-floating {
+    margin: 7px 0px;
+    padding: 0px;
+  }
+  .form-floating > label {
+    font-size: 14px;
+  }
+  .contact-us-form h2 {
+    font-size: clamp(18px, 2.2vw, 27px);
+    color: var(--rare-color);
+  }
+  .contact-us-form form {
+    margin-top: 18px;
+  }
+  .contact-us-form .inputsCont {
+    column-gap: 10px;
+  }
+  .inputsCont .form-floating {
+    flex: 1;
+  }
+  .form-floating > label::after {
+    background-color: transparent;
+  }
+  .form-floating > input:focus + label,
+  .form-floating > textarea:focus + label {
+    margin-top: 0;
+  }
+  .contact-us-form form input,
+  .contact-us-form form textarea,
+  .contact-us-form form select,
+  .contact-us-form form label {
+    border-radius: 0;
+    color: var(--txt-color);
+  }
+  .contact-us-form form select option {
+    color: gray;
+    border-radius: 0;
+  }
+  .contact-us-form .row {
+    gap: 15px;
+  }
+  .form-submit-btn {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    margin-top: 10px;
+    padding: 12px 0px;
+    font-size: 15px;
+  }
+  .form-submit-btn:hover {
+    background-color: var(--rare-color);
+    color: white;
+  }

@@ -1,0 +1,73 @@
+.properties-section-card {
+    padding: 40px 35px;
+    min-width: 20%;
+    background-color: white;
+  }
+  .properties-section-card h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 31px 0px 14px 0px;
+  }
+  .properties-section-card-top svg {
+    height: 45px;
+    width: 45px;
+    z-index: 2;
+    position: relative;
+    margin-left: 5px;
+  }
+  .properties-section-card-top .circle {
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    z-index: 1;
+  }
+  .properties-section-card p {
+    color: var(--txt-color);
+  }
+  .services-section .properties-section-card {
+    border: none;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s;
+    box-shadow: var(--box-shadow);
+    padding: 40px 30px;
+    background-color: var(--primary-color);
+    z-index: 23;
+  }
+  .services-section .properties-section-card * {
+    transition: all 0.2s;
+  }
+  .properties-sec-overlay {
+    height: 100%;
+    width: 100%;
+    background-color: var(--secondary-color);
+    position: absolute;
+    top: -500px;
+    right: 0;
+    z-index: -1;
+    left: 0;
+    transition: all 0.5s !important;
+  }
+  .services-section .properties-section-card:hover .properties-sec-overlay {
+    top: 0;
+  }
+  .services-section .properties-section-card:hover {
+    p {
+      color: white;
+    }
+    .properties-section-card-top svg {
+      fill: white;
+    }
+    .properties-section-card-top .circle {
+      background-color: var(--secondary-color);
+    }
+    h4 {
+      color: var(--primary-color);
+    }
+  }
+  .services-section
+    .properties-section-card:hover
+    .properties-section-card-top
+    .circle {
+    background-color: var(--rare-color);
+  }

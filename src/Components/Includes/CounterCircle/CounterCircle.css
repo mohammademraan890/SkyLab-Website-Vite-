@@ -1,0 +1,20 @@
+.counter-right-circle:first-child {
+  background-color: var(--secondary-color);
+}
+.counter-right-circle:nth-child(2) {
+  background-color: var(--txt-color);
+}
+.counter-right-btm-circle {
+  background-color: var(--rare-color);
+  margin-top: -70px;
+}
+.counter-right-circle h2 {
+  font-size: clamp(18px, 2vw, 32px);
+}
+.counter-right-circle {
+    height: 180px;
+    width: 180px;
+    border-radius: 50%;
+    row-gap: 2% !important;
+    color: var(--primary-color);
+  }

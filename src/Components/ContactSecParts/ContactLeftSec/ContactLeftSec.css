@@ -1,0 +1,11 @@
+.contact-us-right {
+    padding-right: 30px;
+  }
+  .contact-us-right h1 {
+    color: var(--rare-color);
+    margin-bottom: 16px;
+    margin-right: 20px;
+  }
+  .contact-us-right p {
+    color: var(--txt-color);
+  }

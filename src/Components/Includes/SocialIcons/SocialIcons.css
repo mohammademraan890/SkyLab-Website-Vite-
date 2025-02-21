@@ -1,0 +1,17 @@
+.menuNav-socialLinks {
+    gap: 8px;
+  }
+  .menuNav-socialLinks a {
+    padding: 8px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    transition: all 0.3s;
+  }
+  .menuNav-socialLinks a:hover {
+    background-color: var(--rare-color);
+  }
+  .menuNav-socialLinks svg {
+    height: 14px;
+    width: 14px;
+    fill: var(--primary-color);
+  }

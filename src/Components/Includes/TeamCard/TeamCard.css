@@ -1,0 +1,45 @@
+.team-sec-card {
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    min-width: 23%;
+  }
+  .team-sec-img {
+    height: 300px;
+    position: relative;
+  }
+  .team-sec-img .team-sec-hover {
+    position: absolute;
+    top: -500px;
+    height: 100%;
+    width: 100%;
+    background-color: var(--secondary-color);
+    transition: all 0.5s ease-in-out;
+  }
+  .team-sec-card:hover .team-sec-hover {
+    top: 0;
+  }
+  .team-sec-hover svg {
+    fill: black;
+  }
+  .team-sec-hover a {
+    background-color: white;
+  }
+  .team-sec-hover a:hover svg {
+    fill: var(--primary-color);
+  }
+  .team-sec-img img {
+    height: 100%;
+    object-fit: cover;
+  }
+  .team-sec-cont {
+    background-color: white;
+    padding: 15px 0px;
+  }
+  .team-sec-cont h4 {
+    font-size: clamp(12px,2vw,18px);
+    color: var(--rare-color);
+    margin-bottom: 4px;
+  }
+  .team-sec-cont p {
+    color: var(--txt-color);
+  }

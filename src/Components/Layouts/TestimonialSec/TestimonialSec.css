@@ -1,0 +1,5 @@
+.testimonial-sec {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("https://media.istockphoto.com/id/477354246/photo/double-helix-of-the-dna.jpg?s=612x612&w=0&k=20&c=zYvbnj2KmBH3TTrKVtRc1Lt4J3mcff67cESdNujNbuI=") no-repeat center/cover;
+    padding-top: 100px;
+  }

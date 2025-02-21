@@ -1,0 +1,638 @@
+@media screen and (max-width: 1200px) {
+    .hero-section-slider {
+      padding: 200px 0px;
+    }
+    .properties-section-card {
+      padding: 30px 25px;
+    }
+    .properties-section-card-top svg {
+      height: 40px;
+      width: 40px;
+    }
+    .counter-left-bottom-title {
+      margin: 20px 0px 12px 0px;
+    }
+    .counter-left-bottom-icon svg {
+      height: 44px;
+      width: 44px;
+    }
+    .counter-right-circles-sec .counter-right-circle {
+      height: 160px;
+      width: 160px;
+    }
+    .progress-left-btn {
+      margin-top: 30px;
+    }
+    .contact-us-right h1 {
+      margin-bottom: 16px;
+      margin-right: 10px;
+    }
+    .services-section-cards-sec {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    .services-section .properties-section-card {
+      min-width: 32%;
+    }
+  }
+  @media screen and (max-width: 991px) {
+    :root {
+      --section-bottom-margin: 40px;
+    }
+    .services-section {
+      padding-top: 40px;
+    }
+    .custom-container {
+      width: 90%;
+    }
+    .circle {
+      height: 23px;
+      width: 23px;
+    }
+    .topnav-left ul li:first-child {
+      margin-right: 20px;
+    }
+    .topnav-left ul li:nth-child(2) svg {
+      margin-right: 5px;
+    }
+    .topnav-left ul li:first-child svg {
+      margin-right: 2px;
+    }
+    .topnav-left svg {
+      height: 10px;
+      width: 10px;
+    }
+    .topnav-container {
+      height: 28px;
+    }
+    .centerNav svg {
+      height: 25px;
+      width: 25px;
+      margin-right: 8px;
+    }
+    .centerNav-left-text span:first-child,
+    .centerNav-right-text span:first-child {
+      font-size: 15px;
+    }
+    .centerNav-left-text,
+    .centerNav-right-text {
+      gap: 5px;
+    }
+    .centerNav {
+      padding-top: 15px;
+      height: 85px;
+    }
+    .menuNav {
+      height: 50px;
+      bottom: -25px;
+    }
+    .menuNav-container ul li {
+      margin-right: 20px;
+    }
+    .menuNav-socialLinks svg {
+      height: 13px;
+      width: 13px;
+    }
+    .hero-section-slider {
+      padding: 120px 0px;
+    }
+    .counter-left-bottom-title {
+      margin: 20px 0px 10px 0px;
+    }
+    .counter-left-bottom-icon svg {
+      height: 36px;
+      width: 36px;
+    }
+    .counter-sec-right .counter-sec-right-tite {
+      margin-bottom: 15px;
+    }
+    .counter-right-btm-circle {
+      margin-top: -60px;
+    }
+    .counter-right-top-circles-sec {
+      gap: 25px;
+    }
+    .counter-right-circles-sec .counter-right-circle {
+      height: 120px;
+      width: 120px;
+    }
+    .properties-section-card {
+      padding: 25px 20px;
+    }
+    .properties-section-card-top svg {
+      height: 37px;
+      width: 37px;
+      margin-left: 2px;
+    }
+    .properties-section-card h4 {
+      margin: 25px 0px 10px 0px;
+    }
+    .progress-section-container {
+      padding-top: 50px;
+    }
+    .progress-section-left {
+      padding: 35px 30px;
+    }
+    .progress-section-left h1 {
+      margin-bottom: 13px;
+    }
+    .progress-left-card-sec {
+      padding: 20px 0px 0px 0px;
+    }
+    .progress-section-right {
+      margin-top: 30px;
+    }
+    .progress-play-btn {
+      width: 65px;
+      height: 65px;
+    }
+    .progress-left-btn {
+      margin-top: 30px;
+    }
+    .progress-bar {
+      height: 3px;
+    }
+    .progress-bars-section {
+      padding: 30px 25px;
+      gap: 18px;
+    }
+    .services-section-cards-sec {
+      margin-top: 40px;
+    }
+    .services-section .properties-section-card {
+      padding: 30px 25px;
+    }
+    .services-section-card-btn a {
+      padding: 8px 15px;
+      font-size: 14px;
+    }
+    .services-section-card-btn svg {
+      height: 12px;
+      width: 12px;
+    }
+    .contact-us-right {
+      padding-right: 10px;
+    }
+    .contact-us-right h1 {
+      margin-bottom: 16px;
+      margin-right: 0;
+    }
+    .contact-right-text h4 {
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+    .contact-right-address:first-child {
+      padding-bottom: 15px;
+    }
+    .contact-right-address:nth-child(2) {
+      padding-top: 15px;
+    }
+    .contact-us-form form {
+      margin-top: 15px;
+    }
+    .contact-us-form form input,
+    .contact-us-form form textarea,
+    .contact-us-form form select,
+    .contact-us-form form label {
+      font-size: 14px;
+    }
+    .contact-us-form .row {
+      gap: 10px;
+    }
+    .form-submit-btn {
+      margin-top: 10px;
+      padding: 10px 0px;
+      font-size: 14px;
+    }
+    .about-sec-content h1 {
+      margin-bottom: 10px;
+    }
+    .about-sec-subtitle {
+      margin-bottom: 20px;
+    }
+    .about-sec-content h3 {
+      margin-bottom: 17px;
+    }
+    .about-sec-desc {
+      margin-bottom: 14px;
+    }
+    .about-sec-content .menuNav-socialLinks a {
+      padding: 10px;
+    }
+    .about-sec-content .menuNav-socialLinks svg {
+      height: 12px;
+      width: 12px;
+    }
+    .team-card-container {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 15px;
+    }
+    .team-sec-card {
+      min-width: 30%;
+    }
+    .team-sec-cont {
+      padding: 13px 0px;
+    }
+    .menuNav-socialLinks {
+      gap: 6px;
+    }
+    .team-sec-cont h4 {
+      margin-bottom: 6px;
+    }
+    .testimonial-sec {
+      padding-top: 50px;
+    }
+    .testimonial-sec-left {
+      margin-bottom: 60px;
+    }
+    .testimonial-sec-left h1 {
+      margin-bottom: 15px;
+    }
+    .testimonial-sec-right {
+      padding: 20px 30px 20px 30px;
+    }
+    .testimonial-sec-left p {
+      margin-bottom: 32px;
+    }
+    .testimonial-slider-center-sec p {
+      margin: 30px 0px 15px 0px;
+    }
+    .testimonial-sec-slider-icon svg {
+      height: 45px;
+      width: 45px;
+    }
+    .testimonial-sec-slider-icon .circle {
+      bottom: -4px;
+      left: -8px;
+    }
+    .testimonial-sec-slider-nav div svg {
+      height: 20px;
+      width: 20px;
+    }
+    .testimonial-slider-profile-text h4 {
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+    .testimonial-slider-profile-img {
+      margin-right: 11px;
+    }
+    .testimonial-slider-profile-img img {
+      height: 45px;
+    }
+    .footer-left-sec,
+    .footer-right-links-sec {
+      padding: 45px 0px;
+    }
+    .footer-left-address-sec div svg {
+      margin-right: 6px;
+      height: 12px;
+      width: 12px;
+    }
+    .footer-left-sec .menuNav-socialLinks a {
+      padding: 10px;
+    }
+    .footer-left-sec .menuNav-socialLinks a svg {
+      height: 13px;
+      width: 13px;
+    }
+    .footer-right-sec {
+      padding-left: 15px;
+    }
+    .footer-right-links li {
+      margin-bottom: 8px;
+    }
+    .footer-right-input-sec {
+      margin-top: 25px;
+    }
+    .footer-right-input-sec .form-floating {
+      margin: 0;
+    }
+    .footer-right-input-sec .form-floating label {
+      font-size: 14px;
+    }
+     .footer-bottom p {
+      padding: 20px 0px;
+    }
+    #backTopBtn svg {
+      height: 30px;
+      width: 30px;
+    }
+    #backTopBtn {
+      padding: 4px;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    :root {
+      --section-bottom-margin: 35px;
+    }
+    .services-section {
+      padding-top: 35px;
+    }
+    .custom-container {
+      width: 85%;
+    }
+    .topnav-right ul li span {
+      margin: 0px 5px;
+    }
+    .topnav-left svg {
+      height: 9px;
+      width: 9px;
+    }
+    .menuNav-container ul li {
+      margin-right: 15px;
+    }
+    .hero-section-slider-slide h1 {
+      margin-bottom: 12px;
+    }
+    .hero-section-slider-slide-btn {
+      margin-top: 30px;
+    }
+    .hero-section-slider {
+      padding: 90px 0px;
+    }
+    .hero-section-slider-nav button i {
+      font-size: 14px;
+    }
+    .hero-section-slider-nav button {
+      height: 35px;
+      width: 35px;
+    }
+    .counter-sec-right {
+      margin-top: 30px;
+      padding-left: 0px;
+    }
+    .counter-sec-right .counter-sec-right-tite {
+      margin-bottom: 10px;
+      max-width: 70%;
+    }
+    .counter-left-item {
+      left: 50%;
+      top: 50%;
+    }
+    .properties-sec-card-container {
+      grid-template-columns: 1fr 1fr;
+    }
+    .properties-section-card {
+      padding: 25px 20px;
+    }
+    .properties-section-card {
+      min-width: 40%;
+    }
+    .services-section-cards-sec {
+      grid-template-columns: 1fr 1fr;
+    }
+    .services-section .properties-section-card {
+      min-width: 42%;
+    }
+    .contact-us-left {
+      margin-top: 30px;
+    }
+    .form-floating > .form-control,
+    .form-floating > .form-control-plaintext {
+      font-size: 13px;
+    }
+    .about-sec-content {
+      margin-top: 30px;
+      padding-left: 0%;
+    }
+    .team-card-container {
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+    .team-sec-card {
+      min-width: 45%;
+    }
+    .testimonial-sec-left {
+      margin-bottom: 40px;
+    }
+    .testimonial-sec {
+      padding-top: 40px;
+    }
+    .footer-right-sec {
+      padding-left: 0px;
+      border: none;
+    }
+    .footer-left-sec,
+    .footer-right-links-sec {
+      padding: 25px 0px;
+    }
+  }
+  @media screen and (max-width: 576px) {
+    .custom-container {
+      width: 100%;
+    }
+    .swiper-button-next,.swiper-button-prev{
+      height: 30px;
+      width: 30px;
+      opacity: 1;
+      position: absolute;
+      top: 55%;
+      i{
+        margin: 0;
+        padding: 0;
+      }
+      svg{
+        height: 10px;
+        width: 10px;
+      }
+    }
+    .swiper-button-next::after, .swiper-button-prev::after {
+      font-size: 10px;
+  }
+    .topnav-container {
+      flex-direction: column;
+      justify-content: center !important;
+      gap: 5px;
+      height: 40px;
+    }
+    .topnav-left ul li:first-child {
+      margin-right: 10px;
+    }
+    .topnav-left svg {
+      margin-bottom: 1px;
+    }
+    .MobileNav {
+      background-color: var(--secondary-color);
+      height: 60px;
+    }
+    .MobileNav .logo {
+      color: var(--primary-color);
+      font-size: 28px;
+    }
+    .MobileNav svg {
+      fill: var(--secondary-color);
+      height: 14px;
+      width: 14px;
+    }
+    .mobileNav-socialLinks {
+      gap: 5px;
+    }
+    .mobileNav-socialLinks a {
+      background-color: var(--primary-color);
+      border-radius: 50%;
+      padding: 7px;
+    }
+    .hero-section-slider-slide h1 {
+      margin-bottom: 9px;
+    }
+    .progress-section-container {
+      padding-top: 30px;
+    }
+    .progress-section-left {
+      padding: 20px;
+    }
+    .progress-section-left h1 {
+      margin-bottom: 10px;
+    }
+    .services-sec-top-desc {
+      margin-top: 11px;
+    }
+    .services-section-cards-sec {
+      margin-top: 25px;
+      row-gap: 10px;
+      column-gap: 10px;
+    }
+    .services-section .properties-section-card {
+      padding: 20px 20px;
+    }
+    .services-section-card-btn a {
+      font-size: 13px;
+    }
+    .contact-us-right h1 {
+      margin-bottom: 13px;
+    }
+    .about-sec-content h1 {
+      margin-bottom: 8px;
+    }
+    .about-sec-subtitle {
+      margin-bottom: 15px;
+    }
+    .about-sec-content h3 {
+      margin-bottom: 9px;
+    }
+    .counter-sec-right {
+      margin-top: 15px;
+    }
+    .team-card-container {
+      gap: 10px;
+    }
+    .testimonial-sec {
+      padding-top: 30px;
+    }
+    .testimonial-sec-left h1 {
+      margin-bottom: 10px;
+    }
+    .testimonial-sec-left p {
+      margin-bottom: 20px;
+    }
+    .testimonial-sec-left {
+      margin-bottom: 35px;
+    }
+    .team-sec-cont{
+      padding: 5px 0px;
+    }
+    .team-sec-cont h4 {
+      margin-bottom: 1px;
+  }
+  .menuNav-socialLinks a {
+    padding: 7px;
+  }
+  .menuNav-socialLinks svg {
+    height: 11px;
+    width: 11px;
+  }
+    .testimonial-sec-right {
+      padding: 20px;
+    }
+    .testimonial-slider-center-sec p {
+      margin: 20px 0px 15px 0px;
+    }
+    .testimonial-slider-profile-text h4 {
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+    .testimonial-slider-profile-img {
+      margin-right: 8px;
+    }
+    .footer-left-sec p {
+      margin: 20px 0px 15px 0px;
+    }
+    .footer-left-address-sec div {
+      margin-bottom: 10px;
+    }
+    .footer-left-sec .menuNav-socialLinks a {
+      padding: 8px;
+    }
+    .footer-right-links-sec {
+      padding: 0px 0px 25px 0px;
+    }
+    .footer-right-links li {
+      margin-bottom: 5px;
+    }
+     .footer-bottom p {
+      padding: 15px 0px;
+    }
+    #backTopBtn svg {
+      height: 30px;
+      width: 30px;
+    }
+    #backTopBtn {
+      padding: 3px;
+    }
+  }
+  @media screen and (max-width: 425px) {
+    :root {
+      --section-bottom-margin: 30px;
+    }
+     .owl-carousel .owl-nav button.owl-next {
+      right: 10px;
+  }
+     .owl-carousel .owl-nav button.owl-prev {
+      left: 10px;
+  }
+  .hero-section-slider-slide p {
+    max-width: 100%;
+  }
+  .hero-section-slider-slide h1 {
+     max-width: 100%;
+  }
+    .services-section {
+      padding-top: 30px;
+    }
+    .hero-section-slider {
+      padding: 70px 0px;
+    }
+    .hero-section-slider-slide h1 {
+      margin-bottom: 9px;
+    }
+    .counter-sec-right .counter-sec-right-tite {
+      max-width: 100%;
+    }
+    .contact-us-form .inputsCont {
+      column-gap: 0px;
+      flex-direction: column;
+    }
+    .about-sec-content h3 {
+      margin-bottom: 6px;
+    }
+    .contact-us-form .inputsCont .form-floating {
+      width: 100%;
+    }
+    .services-section-cards-sec {
+      grid-template-columns: 1fr;
+    }
+    .services-section .properties-section-card {
+      min-width: 100%;
+    }
+    .properties-sec-card-container {
+      grid-template-columns: 1fr;
+    }
+    .properties-section-card {
+      min-width: 80%;
+    }
+    .team-sec-img {
+      height: auto;
+    }
+    .team-sec-cont p {
+      font-size: 10px;
+  }
+  }

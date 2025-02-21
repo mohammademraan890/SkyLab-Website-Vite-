@@ -1,0 +1,34 @@
+.topnav {
+    background-color: var(--primary-color);
+    color: var(--txt-color);
+  }
+  .topnav ul li a, .topnav span{
+    font-size: clamp(9px,1vw,12px);
+  }
+  .topnav-container {
+    height: 40px;
+  }
+  .topnav a,
+  .topnav svg {
+    color: var(--txt-color);
+  }
+  .topnav a:hover {
+    text-decoration: underline;
+  }
+  .topnav-left svg {
+    height: 11px;
+    width: 11px;
+    margin-bottom: 2px;
+  }
+  .topnav-left ul li:nth-child(2) svg {
+    margin-right: 6px;
+  }
+  .topnav-left ul li:first-child svg {
+    margin-right: 2px;
+  }
+  .topnav-left ul li:first-child {
+    margin-right: 25px;
+  }
+  .topnav-right ul li span {
+    margin: 0px 10px;
+  }

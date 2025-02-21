@@ -1,0 +1,17 @@
+.progress-sec-bar {
+    color: var(--primary-color);
+    font-size: 14px;
+  }
+  .progress-container {
+    width: 100%;
+    background-color: var(--primary-color);
+    overflow: hidden;
+    margin-top: 10px;
+    position: relative;
+  }
+  .progress-bar {
+    width: 0;
+    height: 4px;
+    background-color: var(--rare-color);
+    transition: width 2s ease;
+  }

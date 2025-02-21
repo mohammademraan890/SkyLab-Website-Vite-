@@ -1,0 +1,8 @@
+.team-sec {
+    margin-bottom: var(--section-bottom-margin);
+  }
+  .team-card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 15px;
+  }

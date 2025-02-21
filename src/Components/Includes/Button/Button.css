@@ -1,0 +1,14 @@
+.btns {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+    width: fit-content;
+  }
+  .btns a {
+    color: var(--primary-color);
+    padding: 15px 30px;
+    font-size: clamp(12px,1.3vw,16px);
+  }
+  .btns:hover {
+    background-color: var(--rare-color);
+  }

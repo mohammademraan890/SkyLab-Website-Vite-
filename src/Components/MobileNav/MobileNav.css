@@ -1,0 +1,43 @@
+.MobileNav {
+    background-color: var(--secondary-color);
+    height: 60px;
+  }
+  .MobileNav .logo {
+    color: var(--primary-color);
+    font-size: 28px;
+  }
+  .MobileNav svg {
+    fill: var(--secondary-color);
+    height: 14px;
+    width: 14px;
+  }
+  .mobileNav-socialLinks {
+    gap: 5px;
+  }
+  .mobileNav-socialLinks a {
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    padding: 7px;
+  }
+
+  .offcanvas.offcanvas-top {
+    min-height: 150px;
+    height: 40%;
+    max-height: 400px;
+  }
+  .offcanvas-body::-webkit-scrollbar {
+    display: none;
+  }
+  .offcanvas .btn-close {
+    height: 13px;
+    width: 13px;
+    box-shadow: none;
+    padding: 0;
+  }
+  .offcanvas ul li a {
+    color: var(--txt-color2);
+    position: relative;
+  }
+  .offcanvas .main-ul {
+    gap: 10px;
+  }

@@ -1,0 +1,6 @@
+.progress-bars-section {
+    background-color: var(--secondary-color);
+    padding: 45px 40px;
+    width: 100%;
+    gap: 20px;
+  }
