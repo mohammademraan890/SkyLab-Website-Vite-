@@ -1,0 +1,33 @@
+.cardDetailSec{
+    min-height: 100vh;
+    margin-top: 100px;
+}
+.cardDetailSvg svg{
+    height: 100px;
+    width: 100px;
+}
+.CardLeftSec .circle{
+    height: 50px;
+    width: 50px;
+}
+.cardDetailSvg{
+    position: relative;
+}
+.cardDetailSvg .circle{
+    position: absolute;
+    bottom: -10px;
+    left: -20px;
+    z-index: -1;
+}
+.CardLeftSec{
+    flex: 1;
+}
+.CardRightSec{
+    flex: 2;
+}
+.cardDetailSec .services-section-cards-sec{
+    margin: 50px 0px;
+}
+.cardDetailSec .services-section-cards-sec .properties-section-card{
+    box-shadow: 0px 0px 10px 0px #0000001a;
+}

@@ -5,7 +5,7 @@
   --rare-color: rgb(2, 27, 82);
   --txt-color: #838397;
   --txt-color2: #000000;
-  --titles-font-family: "Nunito Sans", sans-serif;
+  --titles-font-family: "Red Rose", serif;
   --txt-font-family: "Roboto", sans-serif;
   --section-bottom-margin: 70px;
   --box-shadow: 0px 0px 20px 8px rgba(48, 48, 48, 0.06);
@@ -39,6 +39,7 @@ li {
 }
 a {
   text-decoration: none;
+  color: inherit;
 }
 :is(h1, h2, h3, h4, h5, h6) {
   font-family: var(--titles-font-family) !important;

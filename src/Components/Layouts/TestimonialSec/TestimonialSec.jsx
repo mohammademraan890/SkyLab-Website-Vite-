@@ -1,4 +1,3 @@
-import React from 'react'
 import TestimonialLeft from '../../TestimonialSecParts/TestimonialLeft/TestimonialLeft'
 import TestimonialSlider from '../../TestimonialSecParts/TestimonialSlider/TestimonialSlider'
 import './TestimonialSec.css'

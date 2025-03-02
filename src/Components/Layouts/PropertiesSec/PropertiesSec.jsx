@@ -1,4 +1,3 @@
-import React from 'react'
 import { PropertyCardsData } from '../../Data/Data'
 import ServiceCard from '../../Includes/ServiceCard/ServiceCard'
 import './PropertiesSec.css'
@@ -7,13 +6,13 @@ const PropertiesSec = () => {
     <div className="properties-section">
       <div className="custom-container properties-section-container">
         <div className="properties-sec-card-container">
-          {PropertyCardsData.map((card) => {
+          {PropertyCardsData?.map((card) => {
             return (
               <ServiceCard
-                key={card.id}
-                svg1={card.icon}
-                title={card.title}
-                desc={card.description}
+                key={card?.id}
+                svg1={card?.icon}
+                title={card?.title}
+                desc={card?.description}
                 showHover={false}
               />
             );

@@ -1,4 +1,3 @@
-import React from 'react'
 import ContactLeftSec from '../../ContactSecParts/ContactLeftSec/ContactLeftSec'
 // import ContactLeftSec from '../../ContactSecParts/ContactLeftSec/ContactLeftSec'
 

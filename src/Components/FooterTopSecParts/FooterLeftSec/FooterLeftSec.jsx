@@ -1,4 +1,3 @@
-import React from "react";
 import "./FooterLeftSec.css";
 import Logo from "../../Includes/Logo/Logo";
 import SocialIcons from "../../Includes/SocialIcons/SocialIcons";

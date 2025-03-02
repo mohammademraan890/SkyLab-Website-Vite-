@@ -1,4 +1,3 @@
-import React from 'react'
 import CounterImgSec from '.././../CounterSecParts/CounterImgSec/CounterImgSec'
 import CounterCircleSec from '.././../CounterSecParts/CounterCircleSec/CounterCircleSec'
 import './CounterSec.css'

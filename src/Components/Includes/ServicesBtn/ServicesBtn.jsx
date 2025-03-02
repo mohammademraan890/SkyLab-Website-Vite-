@@ -1,9 +1,8 @@
-import React from "react";
 import "./ServicesBtn.css";
 const ServicesBtn = () => {
   return (
     <div className="services-section-card-btn fw-medium ">
-      <a href="/">
+      <button>
         Read More{" "}
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -22,7 +21,7 @@ const ServicesBtn = () => {
             d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708"
           />
         </svg>
-      </a>
+      </button>
     </div>
   );
 };

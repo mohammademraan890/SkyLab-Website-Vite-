@@ -1,4 +1,3 @@
-import React from "react";
 import { footerLinks } from "../../Data/Data";
 import { Link } from "react-router-dom";
 import "./FooterLinks.css";

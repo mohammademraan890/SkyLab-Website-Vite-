@@ -55,15 +55,15 @@
 
 export const NavLinks = [
   { id: 1, title: "Home", link: "/" },
-  { id: 2, title: "About", link: "/about?category=shoes" },
+  { id: 2, title: "About", link: "/about" },
   { id: 3, title: "Services", link: "/services" },
   {
     id: 4,
     title: "Pages",
     subLinks: [
-      { id: 41, title: "Page 1", link: "/page1" },
-      { id: 42, title: "Page 2", link: "/page2" },
-      { id: 43, title: "Page 3", link: "/page3" },
+      { id: 41, title: "Products", link: "/product" },
+      { id: 42, title: "UseCallback", link: "/usecallback" },
+      { id: 43, title: "Page 3", link: "/product/120/shoes" },
     ],
   },
   { id: 5, title: "Contact", link: "/contact" },
@@ -256,6 +256,7 @@ export const SrvicesCardsData = [
     id: 1,
     title: "Pathology Testing",
     description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisquam, quos.",
+    url:"/service/1",
     svg: (<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
       className="bi bi-heart-pulse" viewBox="0 0 16 16">
       <path
@@ -268,6 +269,7 @@ export const SrvicesCardsData = [
     id: 2,
     title: "Microbiology Tests",
     description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisquam, quos.",
+    url:"/service/2",
     svg: ( <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
       className="bi bi-lungs" viewBox="0 0 16 16">
       <path
@@ -278,6 +280,7 @@ export const SrvicesCardsData = [
     id: 3,
     title: "Biochemistry Tests",
     description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisquam, quos.",
+    url:"/service/3",
     svg: (<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
       className="bi bi-bug-fill" viewBox="0 0 16 16">
       <path
@@ -290,6 +293,7 @@ export const SrvicesCardsData = [
     id: 4,
     title: "Histopathology Tests",
     description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisquam, quos.",
+    url:"/service/4",
     svg: ( <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
       className="bi bi-capsule-pill" viewBox="0 0 16 16">
       <path
@@ -300,6 +304,7 @@ export const SrvicesCardsData = [
     id: 5,
     title: "Urine Tests",
     description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisquam, quos.",
+    url:"/service/5",
     svg: (<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
       className="bi bi-capsule" viewBox="0 0 16 16">
       <path
@@ -310,6 +315,7 @@ export const SrvicesCardsData = [
     id: 6,
     title: "Blood Tests",
     description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisquam, quos.",
+    url:"/service/6",
     svg: ( <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
       className="bi bi-prescription2" viewBox="0 0 16 16">
       <path d="M7 6h2v2h2v2H9v2H7v-2H5V8h2z" />
@@ -321,6 +327,7 @@ export const SrvicesCardsData = [
     id: 7,
     title: "Fever Tests",
     description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisquam, quos.",
+    url:"/service/7",
     svg:(<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
       className="bi bi-clipboard2-pulse" viewBox="0 0 16 16">
       <path
@@ -335,6 +342,7 @@ export const SrvicesCardsData = [
     id: 8,
     title: "Allergy Tests",
     description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisquam, quos.",
+    url:"/service/8",
     svg: ( <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
       className="bi bi-file-diff" viewBox="0 0 16 16">
       <path
@@ -453,3 +461,169 @@ export const TestimonialsSliderData = [
   },
 ];
 
+    
+ export const Products= [
+  {
+      id: 1,
+      name: "Shirt1",
+      price: 300,
+      category: "shirts"
+  },
+  {
+      id: 2,
+      name: "Shoes1",
+      price: 230,
+      category: "shoes"
+  },
+  {
+      id: 3,
+      name: "Watch1",
+      price: 120,
+      category: "watches"
+  },
+  {
+      id: 4,
+      name: "Toy1",
+      price: 560,
+      category: "toys"
+  },
+  {
+      id: 5,
+      name: "Shirt2",
+      price: 340,
+      category: "shirts"
+  },
+  {
+      id: 6,
+      name: "Shoes2",
+      price: 210,
+      category: "shoes"
+  },
+  {
+      id: 7,
+      name: "Watch2",
+      price: 360,
+      category: "watches"
+  },
+  {
+      id: 8,
+      name: "Toy2",
+      price: 800,
+      category: "toys"
+  },
+  {
+      id: 9,
+      name: "Shirt3",
+      price: 670,
+      category: "shirts"
+  },
+  {
+      id: 10,
+      name: "Shoes3",
+      price: 430,
+      category: "shoes"
+  },
+  {
+      id: 11,
+      name: "Watch3",
+      price: 140,
+      category: "watches"
+  },
+  {
+      id: 12,
+      name: "Toy3",
+      price: 280,
+      category: "toys"
+  }
+]    
+
+export const Products1= [
+  {
+      id: 1,
+      name: "Shirt1",
+      category: "shirts"
+  },
+  {
+      id: 2,
+      name: "Shoes1",
+      category: "shoes"
+  },
+  {
+      id: 3,
+      name: "Watch1",
+      category: "watches"
+  },
+  {
+      id: 4,
+      name: "Toy1",
+      category: "toys"
+  },
+  {
+      id: 5,
+      name: "Shirt2",
+      category: "shirts"
+  },
+  {
+      id: 6,
+      name: "Shoes2",
+      category: "shoes"
+  },
+  {
+      id: 7,
+      name: "Watch2",
+      category: "watches"
+  },
+  {
+      id: 8,
+      name: "Toy2",
+      category: "toys"
+  },
+  {
+      id: 9,
+      name: "Shirt3",
+      category: "shirts"
+  },
+  {
+      id: 10,
+      name: "Shoes3",
+      category: "shoes"
+  },
+  {
+      id: 11,
+      name: "Watch3",
+      category: "watches"
+  },
+  {
+      id: 12,
+      name: "Toy3",
+      category: "toys"
+  }
+]    
+
+ export const categoryBtns=[
+  {
+    id: 1,
+    name: "All",
+    category: "all"
+  },
+  {
+    id: 2,
+    name: "Shirts",
+    category: "shirts"
+  },
+  {
+    id: 3,
+    name: "Shoes",
+    category: "shoes"
+  },
+  {
+    id: 4,
+    name: "Watches",
+    category: "watches"
+  },
+  {
+    id: 5,
+    name: "Toys",
+    category: "toys"
+  }
+]

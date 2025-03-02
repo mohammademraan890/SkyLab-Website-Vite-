@@ -2,6 +2,7 @@ import "./ServicesSec.css";
 import SeactionsHeading from "../../Includes/SectionsHeading/SeactionsHeading";
 import { SrvicesCardsData } from "../../Data/Data";
 import ServiceCard from "../../Includes/ServiceCard/ServiceCard";
+import { Link } from "react-router-dom";
  const ServicesSec = () => {
   return (
     <div className="services-section">
@@ -20,17 +21,17 @@ import ServiceCard from "../../Includes/ServiceCard/ServiceCard";
           magni eaque ipsum architecto nemo repellat!
         </p>
         <div className="services-section-cards-sec w-100 ">
-          {SrvicesCardsData.map((card) => {
+          {SrvicesCardsData?.map((card) => {
             return (
-              <div key={card.id}>
+               <Link to={card?.url} key={card?.id}>
                 <ServiceCard
-                  svg1={card.svg}
-                  title={card.title}
-                  desc={card.description}
+                  svg1={card?.svg}
+                  title={card?.title}
+                  desc={card?.description}
                   showHover={true}
                   showBtn={true}
                 />
-              </div>
+              </Link>
             );
           })}
         </div>

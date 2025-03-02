@@ -1,4 +1,3 @@
-import React from 'react'
 import SocialIcons from '../../Includes/SocialIcons/SocialIcons'
 import './AboutSec.css'
 import SeactionsHeading from '../../Includes/SectionsHeading/SeactionsHeading'

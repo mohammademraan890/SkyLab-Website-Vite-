@@ -2,11 +2,12 @@
     font-size: 15px;
     margin-top: 20px;
   }
-  .services-section-card-btn a {
+  .services-section-card-btn button {
     color: var(--txt-color2);
     background-color: rgb(231, 238, 250);
     padding: 8px 15px;
     display: inline-block;
+    border: none;
   }
   .services-section-card-btn svg {
     height: 13px;

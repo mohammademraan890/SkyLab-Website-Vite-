@@ -1,4 +1,3 @@
-import React from "react";
 import { TestimonialsSliderData } from "../../Data/Data";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules"; 
@@ -21,25 +20,25 @@ const TestimonialSlider = () => {
         modules={[Navigation]} 
        
       >
-        {TestimonialsSliderData.map((testimonial) => (
-          <SwiperSlide key={testimonial.id}>
+        {TestimonialsSliderData?.map((testimonial) => (
+          <SwiperSlide key={testimonial?.id}>
             <div className="testimonial-slider-inner">
               <div className="testimonial-slider-top-sec">
                 <div className="testimonial-sec-slider-icon">
-                  {testimonial.svg}
+                  {testimonial?.svg}
                   <div className="circle rounded-circle"></div>
                 </div>
               </div>
               <div className="testimonial-slider-center-sec">
-                <p>{testimonial.text}</p>
+                <p>{testimonial?.text}</p>
               </div>
               <div className="testimonial-slider-bottom-sec d-flex align-items-center">
                 <div className="testimonial-slider-profile-img">
-                  <img src={testimonial.image} alt={testimonial.name} />
+                  <img src={testimonial?.image} alt={testimonial?.name} />
                 </div>
                 <div className="testimonial-slider-profile-text">
-                  <h4 className="fw-bold">{testimonial.name}</h4>
-                  <p>{testimonial.profession}</p>
+                  <h4 className="fw-bold">{testimonial?.name}</h4>
+                  <p>{testimonial?.profession}</p>
                 </div>
               </div>
             </div>

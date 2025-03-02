@@ -1,4 +1,3 @@
-import React from 'react'
 import TeamCard from '../../Includes/TeamCard/TeamCard'
 import './TeamSec.css'
 const TeamSec = () => {

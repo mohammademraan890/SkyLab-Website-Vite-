@@ -1,4 +1,3 @@
-import React from 'react'
 import './CounterImgSec.css'
 const CounterImgSec = () => {
   return (

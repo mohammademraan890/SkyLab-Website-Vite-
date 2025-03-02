@@ -18,7 +18,7 @@ const HeroSlider = () => {
           loop
           className="hero_section-container"
         >
-          {HeroSliderData.map((slide, index) => (
+          {HeroSliderData?.map((slide, index) => (
             <SwiperSlide key={slide.id}>
             <div
               className={`hero-section-slider hero-section-slide`}
@@ -34,8 +34,8 @@ const HeroSlider = () => {
                       : "align-items-sm-end text-sm-end"
                   } align-items-center text-center`}
                 >
-                  <h1 className="fw-bolder">{slide.title}</h1>
-                  <p>{slide.description}</p>
+                  <h1 className="fw-bolder">{slide?.title}</h1>
+                  <p>{slide?.description}</p>
                   <Buttons title={"Explore More"} margin={"50px 0px 0px 0px"} />
                 </div>
               </div>

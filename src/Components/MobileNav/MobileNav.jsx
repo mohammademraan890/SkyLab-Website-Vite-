@@ -1,4 +1,3 @@
-import React from "react";
 import Logo from "../Includes/Logo/Logo";
 import { NavLinks, socialIcons } from "../Data/Data";
 import "./MobileNav.css";
@@ -16,14 +15,14 @@ const MobileNav = () => {
             />
           </div>
           <div className="mobileNav-socialLinks d-flex align-items-center justify-content-between">
-            {socialIcons.map((icon) => {
+            {socialIcons?.map((icon) => {
               return (
                 <a
-                  key={icon.id}
+                  key={icon?.id}
                   className="d-flex align-items-center justify-content-center"
-                  href={icon.link}
+                  href={icon?.link}
                 >
-                  {icon.svg}
+                  {icon?.svg}
                 </a>
               );
             })}
@@ -56,37 +55,37 @@ const MobileNav = () => {
         </div>
         <div className="offcanvas-body">
             <ul className="d-flex main-ul fw-medium flex-column ">
-            {NavLinks.map((navItem) => (
-            <li key={navItem.id} className={`${navItem.subLinks ? "dropdown" : ""}`}>
-              {navItem.subLinks ? (
+            {NavLinks?.map((navItem) => (
+            <li key={navItem?.id} className={`${navItem?.subLinks ? "dropdown" : ""}`}>
+              {navItem?.subLinks ? (
                 <div className="dropdown">
                   <NavLink
                     className="dropdown-toggle"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
-                    to={navItem.link}
+                    to={navItem?.link}
                   >
-                    {navItem.title}
+                    {navItem?.title}
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                       <path d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-12.5-32.8 0-45.3l160 160z" />
                     </svg>
                   </NavLink>
                   <ul className="dropdown-menu">
-                    {navItem.subLinks.map((subLink) => (
-                      <li key={subLink.id}>
+                    {navItem?.subLinks?.map((subLink) => (
+                      <li key={subLink?.id}>
                         <NavLink
-                          to={subLink.link}
+                          to={subLink?.link}
                           className={({ isActive }) => (isActive ? "dropdown-item activeLink" : "dropdown-item")}
                         >
-                          {subLink.title}
+                          {subLink?.title}
                         </NavLink>
                       </li>
                     ))}
                   </ul>
                 </div>
               ) : (
-                <NavLink to={navItem.link} className={({ isActive }) => (isActive ? "activeLink" : "")}>
-                  {navItem.title}
+                <NavLink to={navItem?.link} className={({ isActive }) => (isActive ? "activeLink" : "")}>
+                  {navItem?.title}
                 </NavLink>
               )}
             </li>

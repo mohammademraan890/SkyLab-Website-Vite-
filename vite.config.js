@@ -4,10 +4,13 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   build: {
-    sourcemap: true, // Enables JS source maps
-    cssCodeSplit: false, // Prevents splitting of CSS into multiple files (optional)
+    sourcemap: true,
+    cssCodeSplit: false,
   },
   css: {
-    devSourcemap: true, // ✅ Enable CSS source maps in development
+    devSourcemap: true,
+  },
+  server: {
+    historyFallback: true,
   },
 });
