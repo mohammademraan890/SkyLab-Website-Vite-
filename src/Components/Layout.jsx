@@ -10,6 +10,7 @@ import ProductPage from "./Pages/ProductPage/ProductPage";
 import Card from "./Pages/card/Card";
 import QueryParameter from "./queryParameters/QueryParameter";
 import UseCallback from "./usecallback/UseCallback";
+import Form from "./FormUsingFormik/Formikform";
 // import Practice1 from "./uselocationpractice/Practice1";
 function ScrollToTop() {
   const location = useLocation();
@@ -17,7 +18,7 @@ function ScrollToTop() {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 }
-console.log(location.pathname);
+// console.log(location.pathname);
 const Layout = () => {
   const HomePage = React.lazy(() => import("./Pages/HomePage/HomePage"));
   const About = React.lazy(() => import("./Pages/AboutPage/About"));
@@ -46,7 +47,7 @@ const Layout = () => {
           <Route path="/product/:id/:category" element={<ProductPage />} />
           <Route path="/service/:id" element={<Card />} />
           <Route path="/usecallback" element={<UseCallback />} />
-            
+            <Route path="/FormikForm" element={<Form/>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <TestimonialSec />
