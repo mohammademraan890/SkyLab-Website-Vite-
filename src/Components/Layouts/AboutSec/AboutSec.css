@@ -1,11 +1,11 @@
 .about-sec {
-    margin-bottom: var(--section-bottom-margin);
+    padding: var(--section-bottom-margin) 0;
+    background-color: var(--primary-color);
   }
   .about-sec-content {
     padding-left: 5%;
   }
   .about-sec-content h1 {
-    color: var(--rare-color);
     margin-bottom: 16px;
   }
   .about-sec-subtitle {
@@ -14,7 +14,7 @@
   }
   .about-sec-content h3 {
     font-size: clamp(16px, 2.1vw, 26px);
-    color: var(--rare-color);
+    color: var(--headings-color);
     margin-bottom: 20px;
   }
   .about-sec-desc {

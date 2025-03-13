@@ -1,12 +1,13 @@
 .properties-section-card {
     padding: 40px 35px;
     min-width: 20%;
-    background-color: white;
+    background-color: var(--primary-color);
   }
   .properties-section-card h4 {
     font-size: 16px;
     font-weight: 700;
     margin: 31px 0px 14px 0px;
+    color: var(--txt-color2);
   }
   .properties-section-card-top svg {
     height: 45px;
@@ -34,9 +35,7 @@
     background-color: var(--primary-color);
     z-index: 23;
   }
-  .services-section .properties-section-card * {
-    transition: all 0.2s;
-  }
+
   .properties-sec-overlay {
     height: 100%;
     width: 100%;
@@ -46,20 +45,29 @@
     right: 0;
     z-index: -1;
     left: 0;
-    transition: all 0.5s !important;
+  }
+
+  .properties-section-card-top svg{
+    fill: var(--txt-color2);
   }
   .services-section .properties-section-card:hover .properties-sec-overlay {
     top: 0;
   }
+  .properties-section-card p,
+.properties-section-card svg,
+.properties-section-card .circle,
+.properties-section-card h4 {
+    transition:  0.5s ease-in-out !important;
+}
   .services-section .properties-section-card:hover {
     p {
-      color: white;
+      color: var(--primary-color) !important;
     }
     .properties-section-card-top svg {
-      fill: white;
+      fill: var(--primary-color) !important;
     }
     .properties-section-card-top .circle {
-      background-color: var(--secondary-color);
+      background-color: var(--secondary-color) ;
     }
     h4 {
       color: var(--primary-color);

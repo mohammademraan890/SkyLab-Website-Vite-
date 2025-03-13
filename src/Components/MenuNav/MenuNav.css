@@ -13,8 +13,9 @@
     margin: 0;
     width: 100vw;
     background-color: var(--primary-color);
-    box-shadow: var(--box-shadow);
     z-index: 100000;
+    box-shadow: var(--box-shadow);
+
   }
   .menuNav-container {
     background-color: var(--primary-color);
@@ -39,10 +40,17 @@
   .dropdown-toggle::after {
     display: none;
   }
+  .dropdown-item {
+    color: black !important;
+  }
   .dropdown-item:hover {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
+    background-color:var(--rare-color);
+    color:white !important;
   }
   .dropdown ul li {
     margin: 0;
   }
+  .fa-angle-down {
+    font-size: 10px;
+    margin-left: 3px;
+}

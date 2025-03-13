@@ -3,7 +3,7 @@
     margin-top: 20px;
   }
   .services-section-card-btn button {
-    color: var(--txt-color2);
+    color: black;
     background-color: rgb(231, 238, 250);
     padding: 8px 15px;
     display: inline-block;

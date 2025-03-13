@@ -41,7 +41,7 @@ const ProgressSec = () => {
               data-bs-target="#staticBackdrop"
               onClick={handleModalOpen} // Trigger video play
             >
-              <img src="/Assests/assets/play-button (1).png" alt="" />
+              <img id="playIcon" src="/Assests/assets/play-button (1).png" alt="" />
             </div>
             <ProgressBarSec />
           </div>

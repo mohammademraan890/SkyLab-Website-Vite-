@@ -1,7 +1,7 @@
 // import { useEffect } from "react";
 import "./Button.css"; // Import CSS for styling
-import { ErrorBoundary } from "react-error-boundary";
-import { ErrorUI } from "../../../App";
+// import { ErrorBoundary } from "react-error-boundary";
+// import { ErrorUI } from "../../../App";
 
 const Buttons = ({ title, margin }) => {
   // useEffect(() => {

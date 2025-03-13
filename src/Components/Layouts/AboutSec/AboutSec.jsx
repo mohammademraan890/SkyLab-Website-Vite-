@@ -13,7 +13,7 @@ const AboutSec = () => {
             </div>
             <div className="col-md-6 col-sm-12 ps-0">
                 <div className="about-sec-content">
-                    <SeactionsHeading title="Dr. John Martin" Color="var(--rare-color)" maxWidth="100%" margin="0px 0px 16px 0px" />
+                    <SeactionsHeading title="Dr. John Martin" Color="var(--headings-color)" maxWidth="100%" margin="0px 0px 16px 0px" />
                     <p className="about-sec-subtitle">CEO & Founder<br/>Labsky, New York, USA</p>
                     <h3 className="fw-bold">Biography</h3>
                     <p className="about-sec-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur

@@ -1,6 +1,5 @@
 .hero-section {
-    color: var(--primary-color);
-    margin-bottom: var(--section-bottom-margin);
+    color: var(--txt-color1);
   }
   .hero-section-slider {
     padding: 260px 0px;
@@ -35,6 +34,7 @@
 .swiper-button-prev {
   background-color: var(--secondary-color); 
   color: var(--primary-color); 
+  font-weight: 600;
   border-radius: 50%;
   transition: 0.3s ease-in-out;
   padding: 0;

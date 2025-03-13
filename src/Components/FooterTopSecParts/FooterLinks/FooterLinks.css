@@ -2,7 +2,7 @@
     padding: 0;
   }
   .footer-right-links-sec h3 {
-    color: var(--primary-color);
+    color: var(--txt-color1);
     font-size: 18px;
     margin-bottom: 25px;
   }

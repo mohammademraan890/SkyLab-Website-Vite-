@@ -3,8 +3,8 @@ import PropertiesSec from "../../Layouts/PropertiesSec/PropertiesSec";
 import ProgressSec from "../../Layouts/ProgressSec/ProgressSec";
 
 import ServicesSec from "../../Layouts/ServicesSec/ServicesSec";
-import UseMemo from "../../useMemo/UseMemo";
-import UseRef from "../../UseRef/UseRef";
+// import UseMemo from "../../useMemo/UseMemo";
+// import UseRef from "../../UseRef/UseRef";
 
 const HomePage = () => {
   return (
@@ -13,8 +13,8 @@ const HomePage = () => {
       <PropertiesSec />
       <ProgressSec />
       <ServicesSec />
-      <UseMemo/>
-      <UseRef/>
+      {/* <UseMemo/>
+      <UseRef/> */}
     </div>
   );
 };

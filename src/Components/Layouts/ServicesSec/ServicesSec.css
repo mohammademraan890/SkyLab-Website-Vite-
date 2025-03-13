@@ -2,6 +2,7 @@
     padding-bottom: var(--section-bottom-margin);
     overflow: hidden;
     position: relative;
+    background-color: var(--primary-color);
     padding-top: 60px;
   }
   .background-top-img {

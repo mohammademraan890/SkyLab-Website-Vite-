@@ -3,7 +3,7 @@ import React from 'react';
 
 const UseCallback2 = ({ handleClick }) => {
   console.log("Child Rendered");
-    console.log(React)
+    // console.log(React)
   return (
     <div>
       <p>Child Component</p>

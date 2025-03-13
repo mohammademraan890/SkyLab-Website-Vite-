@@ -1,0 +1,31 @@
+/* .dataLabels li{
+    font-size: 20px;
+    font-weight: 500;
+}
+.formData.containar{
+    width: 95% !important;
+    border-radius: 20px !important;
+}
+.dataRow{
+    margin: 0 !important;
+    border-top: 1px solid;
+}
+.productItems{
+    margin: 20px 0px 0px 0px !important;
+}
+.dataRow li{
+    font-size: 16px !important;
+    font-weight: normal !important;
+}
+.DataBtn{
+    background-color: rgb(222, 246, 248);
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.dataLabels .DataBtn.pencil{
+    color: green;
+}
+.dataLabels .DataBtn.del{
+    color: red;
+} */

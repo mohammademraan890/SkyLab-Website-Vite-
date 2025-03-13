@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
           title={
              "Reliable & High Quality Laboratory Service"
           }
-          Color={"var(--rare-color)"}
+          Color={"var(--headings-color)"}
           maxWidth={"49%"}
           margin={"auto"}
         />

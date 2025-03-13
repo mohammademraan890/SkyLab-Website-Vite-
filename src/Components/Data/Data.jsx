@@ -64,11 +64,11 @@ export const NavLinks = [
       { id: 41, title: "Products", link: "/product" },
       { id: 42, title: "UseCallback", link: "/usecallback" },
       { id: 43, title: "Page 3", link: "/product/120/shoes" },
+      { id: 6, title: "Formik Form", link: "/formikform" },
+      { id: 7, title: "Formik Table", link: "/formiktable" },
     ],
   },
   { id: 5, title: "Contact", link: "/contact" },
-  { id: 6, title: "Formik Form", link: "/Formikform" },
-  // { id: 6, title: "Testimonials", link: "/#testimonial" },
 ];
 
 export const HeroSliderData = [
@@ -122,7 +122,6 @@ export const PropertyCardsData = [
         xmlns="http://www.w3.org/2000/svg"
         width="16"
         height="16"
-        fill="currentColor"
         className="bi bi-award"
         viewBox="0 0 16 16"
       >
@@ -141,7 +140,6 @@ export const PropertyCardsData = [
         xmlns="http://www.w3.org/2000/svg"
         width="16"
         height="16"
-        fill="currentColor"
         className="bi bi-people"
         viewBox="0 0 16 16"
       >
@@ -159,7 +157,6 @@ export const PropertyCardsData = [
         xmlns="http://www.w3.org/2000/svg"
         width="16"
         height="16"
-        fill="currentColor"
         className="bi bi-cash-coin"
         viewBox="0 0 16 16"
       >
@@ -183,7 +180,6 @@ export const PropertyCardsData = [
         xmlns="http://www.w3.org/2000/svg"
         width="16"
         height="16"
-        fill="currentColor"
         className="bi bi-headphones"
         viewBox="0 0 16 16"
       >

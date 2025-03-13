@@ -1,5 +1,7 @@
-.properties-section {
-    margin-bottom: var(--section-bottom-margin);
+
+  .properties-section-cont{
+    padding: var(--section-bottom-margin) 0;
+    background-color: var(--primary-color);
   }
   .properties-sec-card-container {
     display: grid;
@@ -7,5 +9,5 @@
     box-shadow: var(--box-shadow);
     row-gap: 1px;
     column-gap: 1px;
-    background-color: rgb(240, 240, 240);
+    background-color: var(--propertySec-separator);
   }

@@ -13,4 +13,7 @@ export default defineConfig({
   server: {
     historyFallback: true,
   },
+  define: {
+    "process.env": {},
+  },
 });

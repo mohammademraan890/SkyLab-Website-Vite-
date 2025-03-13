@@ -19,6 +19,7 @@
     width: 55px;
     position: relative;
     z-index: 5;
+    fill: var(--txt-color2);
   }
   .testimonial-slider-center-sec p {
     color: var(--txt-color);
@@ -35,7 +36,7 @@
     object-fit: cover;
   }
   .testimonial-slider-profile-text h4 {
-    color: var(--rare-color);
+    color: var(--headings-color);
     font-size: 16px;
     margin-bottom: 8px;
   }

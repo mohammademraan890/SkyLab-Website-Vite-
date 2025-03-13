@@ -3,6 +3,7 @@ import ServiceCard from '../../Includes/ServiceCard/ServiceCard'
 import './PropertiesSec.css'
 const PropertiesSec = () => {
   return (
+    <div className="properties-section-cont">
     <div className="properties-section">
       <div className="custom-container properties-section-container">
         <div className="properties-sec-card-container">
@@ -19,6 +20,7 @@ const PropertiesSec = () => {
           })}
         </div>
       </div>
+    </div>
     </div>
   );
 }

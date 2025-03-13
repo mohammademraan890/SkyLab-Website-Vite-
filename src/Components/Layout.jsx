@@ -28,6 +28,9 @@ const Layout = () => {
   const ContactPage = React.lazy(() =>
     import("./Pages/ContactPage/ContactPage")
   );
+  const FormikTable = React.lazy(() =>
+    import("./FormikTable/FormikTable")
+  );
 
   return (
     <>
@@ -47,7 +50,8 @@ const Layout = () => {
           <Route path="/product/:id/:category" element={<ProductPage />} />
           <Route path="/service/:id" element={<Card />} />
           <Route path="/usecallback" element={<UseCallback />} />
-            <Route path="/FormikForm" element={<Form/>} />
+          <Route path="/formikform" element={<Form />} />
+          <Route path="/formiktable" element={<FormikTable />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <TestimonialSec />

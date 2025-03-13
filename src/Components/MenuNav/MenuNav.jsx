@@ -2,10 +2,25 @@ import "./MenuNav.css";
 import { NavLinks } from "../Data/Data";
 import { NavLink } from "react-router-dom";
 import SocialIcons from "../Includes/SocialIcons/SocialIcons";
+import ThemeButton from "../ThemeButton/ThemeButton";
+// import { useEffect, useState } from "react";
 
 const MenuNav = () => {
+  // const [isScrolled, setIsScrolled] = useState(false);
+
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (window.scrollY > 100) {
+  //       setIsScrolled(true);
+  //     } else {
+  //       setIsScrolled(false);
+  //     }
+  //   };
+
+  //   window.addEventListener("scroll", handleScroll);
+  // }, []);
   return (
-    <div className="menuNav d-sm-block d-none">
+    <div className={`menuNav d-sm-block d-none `} >
       <div className="custom-container menuNav-container d-flex justify-content-between align-items-center">
         <ul className="d-flex align-items-center fw-medium">
           {NavLinks?.map((navItem) => (
@@ -19,9 +34,7 @@ const MenuNav = () => {
                     to={navItem.link}
                   >
                     {navItem?.title}
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                      <path d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-12.5-32.8 0-45.3l160 160z" />
-                    </svg>
+                    <i className="fa-solid fa-angle-down"></i>
                   </NavLink>
                   <ul className="dropdown-menu">
                     {navItem?.subLinks?.map((subLink) => (
@@ -43,8 +56,12 @@ const MenuNav = () => {
               )}
             </li>
           ))}
-        </ul>
+          </ul>
+          <div className="d-flex align-items-center gap-3">
+
+          <ThemeButton/>
         <SocialIcons />
+          </div>
       </div>
     </div>
   );

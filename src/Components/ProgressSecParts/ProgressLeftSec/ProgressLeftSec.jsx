@@ -1,4 +1,3 @@
-import React from "react";
 import SeactionsHeading from "../../Includes/SectionsHeading/SeactionsHeading";
 import { ProgressCardsData } from "../../Data/Data";
 import ServiceCard from "../../Includes/ServiceCard/ServiceCard";
@@ -9,7 +8,7 @@ const ProgressLeftSec = () => {
     <div className="progress-section-left col-md-6 col-sm-12">
       <SeactionsHeading
         title="The Best Medical Test & Laboratory Solution"
-        Color="var(--rare-color)"
+        Color="var(--headings-color)"
         maxWidth="90%"
         marginBtm="15px"
       />

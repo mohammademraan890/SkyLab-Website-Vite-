@@ -1,4 +1,3 @@
-import React from 'react'
 import './ContactForm.css'
 
 const ContactForm = () => {
@@ -19,7 +18,7 @@ const ContactForm = () => {
           </div>
           <div className="inputsCont d-flex align-items-center">
             <div className="form-floating">
-              <input type="number" className="form-control p" id="floatingInputNumber" placeholder="name@example.com" />
+              <input type="text" className="form-control p" id="floatingInputNumber" placeholder="name@example.com" />
               <label className="d-flex align-items-center" htmlFor="floatingInputNumber">Your Number</label>
             </div>
             <div className="form-floating">

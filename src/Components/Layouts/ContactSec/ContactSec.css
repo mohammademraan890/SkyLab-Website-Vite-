@@ -1,3 +1,4 @@
 .contact-us-section {
-    margin-bottom: var(--section-bottom-margin);
+    padding: var(--section-bottom-margin) 0;
+    background-color: var(--primary-color);
   }

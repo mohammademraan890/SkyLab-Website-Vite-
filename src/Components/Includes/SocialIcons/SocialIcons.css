@@ -9,6 +9,9 @@
   }
   .menuNav-socialLinks a:hover {
     background-color: var(--rare-color);
+     svg{
+      fill:white;
+     }
   }
   .menuNav-socialLinks svg {
     height: 14px;
