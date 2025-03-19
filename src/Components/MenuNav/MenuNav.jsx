@@ -2,7 +2,7 @@ import "./MenuNav.css";
 import { NavLinks } from "../Data/Data";
 import { NavLink } from "react-router-dom";
 import SocialIcons from "../Includes/SocialIcons/SocialIcons";
-import ThemeButton from "../ThemeButton/ThemeButton";
+import ThemeButton from "../Includes/ThemeButton/ThemeButton";
 // import { useEffect, useState } from "react";
 
 const MenuNav = () => {

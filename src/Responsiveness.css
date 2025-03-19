@@ -93,7 +93,7 @@
       width: 13px;
     }
     .hero-section-slider {
-      padding: 120px 0px;
+      padding: 120px 0px !important;
     }
     .counter-left-bottom-title {
       margin: 20px 0px 10px 0px;
@@ -347,7 +347,7 @@
       margin-top: 30px;
     }
     .hero-section-slider {
-      padding: 90px 0px;
+      padding: 90px 0px !important;
     }
     .hero-section-slider-nav button i {
       font-size: 14px;
@@ -369,7 +369,7 @@
       top: 50%;
     }
     .properties-sec-card-container {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr !important;
     }
     .properties-section-card {
       padding: 25px 20px;
@@ -378,7 +378,7 @@
       min-width: 40%;
     }
     .services-section-cards-sec {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr ;
     }
     .services-section .properties-section-card {
       min-width: 42%;
@@ -475,7 +475,7 @@
       margin-bottom: 9px;
     }
     .progress-section-container {
-      padding-top: 30px;
+      padding-top: 30px !important;
     }
     .progress-section-left {
       padding: 20px;
@@ -599,7 +599,7 @@
       padding-top: 30px;
     }
     .hero-section-slider {
-      padding: 70px 0px;
+      padding: 70px 0px !important;
     }
     .hero-section-slider-slide h1 {
       margin-bottom: 9px;
@@ -618,13 +618,13 @@
       width: 100%;
     }
     .services-section-cards-sec {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr !important;
     }
     .services-section .properties-section-card {
       min-width: 100%;
     }
     .properties-sec-card-container {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr !important;
     }
     .properties-section-card {
       min-width: 80%;

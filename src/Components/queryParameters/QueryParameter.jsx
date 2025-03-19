@@ -10,9 +10,9 @@ const QueryParameter = () => {
   let location = useLocation();
   const navigate = useNavigate();
   const params = new URLSearchParams(location?.search);
-
+  console.log(params)
   const category = params?.get("category");
-
+console.log(category)
   // useLayoutEffect(() => {
   //   const start = Date.now();
   //   while (Date.now() - start < 10000) {
