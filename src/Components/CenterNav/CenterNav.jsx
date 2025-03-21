@@ -1,6 +1,12 @@
+import secureLocalStorage from 'react-secure-storage';
 import Logo from '../Includes/Logo/Logo';
 import "./CenterNav.css";
+
 const CenterNav = () => {
+  const Logindata = secureLocalStorage.getItem("LoginData");
+  const registerData = secureLocalStorage.getItem("registrationData");
+  let user = registerData?.find((obj) => obj?.username === Logindata?.username);
+  console.log(user)
   return (
     <div>
       <div className="d-sm-block d-none centerNav">

@@ -31,7 +31,7 @@ const Registration = () => {
       
     } else {
       secureLocalStorage?.setItem("registrationData", registrationData);
-      // console.log(registrationData);
+      console.log(registrationData);
     }
   }, [registrationData]);
   const signupFormik = useFormik({

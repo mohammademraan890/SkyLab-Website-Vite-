@@ -59,7 +59,7 @@ export const TopNav = () => {
               className="btn btn-primary"
               onClick={() => {
                 secureLocalStorage.removeItem("LoginData");
-                navigate("/");
+                navigate("/" , { state: { showToast: true } });
               }}
             >
               Logout

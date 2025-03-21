@@ -66,6 +66,7 @@ export const NavLinks = [
       { id: 43, title: "Page 3", link: "/product/120/shoes" },
       { id: 6, title: "Formik Form", link: "/formikform" },
       { id: 7, title: "Formik Table", link: "/formiktable" },
+      { id: 8, title: "date-fns", link: "/date-fns" },
     ],
   },
   { id: 5, title: "Contact", link: "/contact" },

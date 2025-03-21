@@ -8,15 +8,17 @@ import {
   TextField,
 } from "@mui/material";
 import "./Login.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AccountCircle, Visibility, VisibilityOff } from "@mui/icons-material";
 import { useFormik } from "formik";
 import validationSchema from "./YUP";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import secureLocalStorage from "react-secure-storage";
+import { toast, ToastContainer } from "react-toastify";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const location = useLocation();
   const navigate = useNavigate();
   const loginFormik = useFormik({
     initialValues: {
@@ -40,19 +42,30 @@ const Login = () => {
         };
         secureLocalStorage.setItem("LoginData", LoginData);
         loginFormik.handleReset();
-        navigate("/home");
+        navigate("/home", { state: { showWelcomeToast: true } });
       } else {
         loginFormik?.setFieldError("username", "Username is invalid");
         loginFormik?.setFieldError("password", "Password is invalid");
       }
     },
   });
+  
   const usernameError =
     loginFormik?.touched?.username && loginFormik?.errors?.username;
   const passwordError =
     loginFormik?.touched?.password && loginFormik?.errors?.password;
+  useEffect(() => {
+
+    if(location?.state?.showToast){
+      toast.error("You LoggedOut Successfully.", {
+        position: "top-right",
+      });
+    }
+    window.history.replaceState({}, "");
+  },[location?.state])
   return (
     <div className="loginPage">
+      <ToastContainer />
       <div className="wrapper">
         <div className="title">Login Form</div>
         <form onSubmit={loginFormik?.handleSubmit}>
