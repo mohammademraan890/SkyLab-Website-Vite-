@@ -31,18 +31,21 @@ const Login = () => {
       const signupData = secureLocalStorage?.getItem("registrationData");
 
       const storedData = signupData?.find(
-        (obj) => obj?.username === username && obj?.password === password
+        (obj) => obj?.username?.toLowerCase() === username?.toLowerCase() && obj?.password === password
       );
+      console.log(storedData)
       if (storedData) {
        const LoginData = {
           username: username,
           name: username === "admin" ? "admin" : "user",
           role: username === "admin" ? "admin" : "user",
           user_id: username === "admin" ? 1 : 0,
+          email : storedData.email, 
         };
         secureLocalStorage.setItem("LoginData", LoginData);
         loginFormik.handleReset();
         navigate("/home", { state: { showWelcomeToast: true } });
+        
       } else {
         loginFormik?.setFieldError("username", "Username is invalid");
         loginFormik?.setFieldError("password", "Password is invalid");

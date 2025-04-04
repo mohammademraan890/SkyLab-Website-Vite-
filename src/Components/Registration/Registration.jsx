@@ -25,20 +25,21 @@ const Registration = () => {
   const navigate = useNavigate();
   useEffect(() => {
     const storedData = secureLocalStorage?.getItem("registrationData");
-    // console.log(storedData)
+    console.log(storedData)
     if (storedData && registrationData?.length === 0) {
       setRegistrationData(storedData);
-      
     } else {
       secureLocalStorage?.setItem("registrationData", registrationData);
       console.log(registrationData);
     }
+    
   }, [registrationData]);
   const signupFormik = useFormik({
     initialValues: {
       name: "",
       username: "",
       email: "",
+      userType: "",
       password: "",
       confirmPassword: "",
       phone: "",
@@ -50,7 +51,7 @@ const Registration = () => {
     validationSchema,
     onSubmit: (values) => {
       // console.log(values);
-      const signupData = secureLocalStorage?.getItem("registrationData") ;
+      const signupData = secureLocalStorage?.getItem("registrationData");
 
       const isEmailExist = signupData?.find(
         (obj) => obj?.email === values?.email
@@ -74,17 +75,33 @@ const Registration = () => {
         }
         return;
       }
+      if(values.userType.toLowerCase() !== "admin" && values.userType.toLowerCase() !== "user"){
+        signupFormik?.setFieldError("userType", "Enter valid user type");
+        return;
 
+      }
+      else if((values.username.toLowerCase() !== "admin" && values.userType.toLowerCase() === "admin") || (values.userType.toLowerCase() === "admin" && values.username.toLowerCase() !== "admin")){
+        signupFormik?.setErrors(
+         {
+          userType: "Enter valid user type",
+          username: "Enter valid username"
+         }
+        );
+        return;
+
+      }
       setRegistrationData([...registrationData, values]);
-      console.log(registrationData)
+      console.log(registrationData);
 
       navigate("/");
       signupFormik?.handleReset();
     },
   });
   const nameErr = signupFormik?.touched?.name && signupFormik?.errors?.name;
-  const usernameErr =signupFormik?.touched?.username && signupFormik?.errors?.username;
+  const usernameErr =
+    signupFormik?.touched?.username && signupFormik?.errors?.username;
   const emailErr = signupFormik?.touched?.email && signupFormik?.errors?.email;
+  const userTypeErr = signupFormik?.touched?.userType && signupFormik?.errors?.userType;
   const phoneErr = signupFormik?.touched?.phone && signupFormik?.errors?.phone;
   const passwordErr =
     signupFormik?.touched?.password && signupFormik?.errors?.password;
@@ -102,7 +119,6 @@ const Registration = () => {
           <div className="formRow row gap-2">
             <TextField
               className="col"
-              id="input-with-icon-textfield"
               label="Name"
               margin="dense"
               variant="outlined"
@@ -112,7 +128,6 @@ const Registration = () => {
             />
             <TextField
               className="col"
-              id="input-with-icon-textfield"
               label="Username"
               margin="dense"
               variant="outlined"
@@ -122,7 +137,6 @@ const Registration = () => {
             />
             <TextField
               className="col"
-              id="input-with-icon-textfield"
               label="Email"
               type="email"
               margin="dense"
@@ -209,11 +223,20 @@ const Registration = () => {
                 {confirmPasswordErr && signupFormik?.errors?.confirmPassword}
               </FormHelperText>
             </FormControl>
+            <TextField
+              className="col"
+              label="User Type"
+              type="text"
+              margin="dense"
+              variant="outlined"
+              {...signupFormik?.getFieldProps("userType")}
+              error={userTypeErr}
+              helperText={userTypeErr && signupFormik?.errors?.userType}
+            />
           </div>
           <div className="formRow row gap-2">
             <TextField
               className="col"
-              id="input-with-icon-textfield"
               label="Phone Number"
               type="number"
               margin="dense"
@@ -224,7 +247,6 @@ const Registration = () => {
             />
             <TextField
               className="col"
-              id="input-with-icon-textfield"
               label="Date of Birth"
               type="date"
               margin="dense"
@@ -237,8 +259,7 @@ const Registration = () => {
           </div>
           <TextField
             className="col"
-            id="input-with-icon-textfield"
-            label="Enter Address"
+           label="Enter Address"
             fullWidth
             type="text"
             margin="dense"

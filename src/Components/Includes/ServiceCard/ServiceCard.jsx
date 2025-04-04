@@ -12,6 +12,7 @@ const ServiceCard = ({ svg1, title, desc, showHover = false, showBtn = false }) 
       </div>
       <h4 className="fw-bold">{title}</h4>
       <p>{desc}</p>
+      
       {showBtn && <ServicesBtn />}
     </div>
   );

@@ -1,12 +1,21 @@
-import secureLocalStorage from 'react-secure-storage';
-import Logo from '../Includes/Logo/Logo';
+import secureLocalStorage from "react-secure-storage";
+import Logo from "../Includes/Logo/Logo";
 import "./CenterNav.css";
+import { PersonOutline } from "@mui/icons-material";
 
 const CenterNav = () => {
   const Logindata = secureLocalStorage.getItem("LoginData");
   const registerData = secureLocalStorage.getItem("registrationData");
-  let user = registerData?.find((obj) => obj?.username === Logindata?.username);
-  console.log(user)
+  let user = registerData?.find(
+    (obj) => obj?.username?.toLowerCase() === Logindata?.username?.toLowerCase()
+  );
+  console.log(Logindata);
+  // const {name,username,email,role} = Logindata
+  // const newObj= {name,username,email,role}
+  const isAdmin = Object?.values(Logindata)?.some(
+    (value) => typeof(value) === "string" && value?.includes("admin")
+  );
+
   return (
     <div>
       <div className="d-sm-block d-none centerNav">
@@ -24,7 +33,7 @@ const CenterNav = () => {
             </svg>
             <div className="centerNav-left-text d-flex flex-column align-items-start">
               <span className="fw-medium">Call Now</span>
-              <span>+012 345 6789</span>
+              <span>{user?.phone}</span>
             </div>
           </div>
           <div className="centerNav-center">
@@ -37,7 +46,17 @@ const CenterNav = () => {
             />
           </div>
           <div className="centerNav-right d-flex align-items-center">
-            <svg
+            {isAdmin ? (
+              <img
+                style={{ marginRight: "10px" }}
+                src="Assests\assets\user.png"
+                alt=""
+              />
+            ) : (
+              <PersonOutline />
+            )}
+
+            {/* <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
@@ -46,10 +65,10 @@ const CenterNav = () => {
               viewBox="0 0 16 16"
             >
               <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
-            </svg>
+            </svg> */}
             <div className="centerNav-right-text d-flex flex-column align-items-start">
-              <span className="fw-medium">Mail Now</span>
-              <span>info@example.com</span>
+              <span className="fw-medium">{user?.username}</span>
+              <span>{user?.email}</span>
             </div>
           </div>
         </div>

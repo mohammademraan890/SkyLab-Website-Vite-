@@ -67,6 +67,7 @@ export const NavLinks = [
       { id: 6, title: "Formik Form", link: "/formikform" },
       { id: 7, title: "Formik Table", link: "/formiktable" },
       { id: 8, title: "date-fns", link: "/date-fns" },
+      { id: 9, title: "Registered Users", link: "/registered-users" },
     ],
   },
   { id: 5, title: "Contact", link: "/contact" },

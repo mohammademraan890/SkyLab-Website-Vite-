@@ -141,7 +141,7 @@ const FormikTable = () => {
         productData?.filter(
           (product) =>
             product?.name?.toLowerCase()?.includes(typedValue) ||
-            product?.username?.toLowerCase()?.includes(typedValue) ||
+            product?.username?.toLowerCase()?.includes(typedValue)||
             product?.color?.toLowerCase()?.includes(typedValue) ||
             product?.phone?.toLowerCase()?.includes(typedValue) ||
             product?.country?.toLowerCase()?.includes(typedValue)
@@ -410,10 +410,8 @@ const FormikTable = () => {
           // localStorage.removeItem("arrayNum") 
           localStorage.clear() 
 
-          console.log(localStorage, localStorage.length , localStorage.key(0))
-        
-        
-        
+          // console.log(localStorage, localStorage.length , localStorage.key(0))
+           
         })}>Clear Storage</button>
      
     </div>

@@ -1,13 +1,14 @@
-// import { useEffect, useState } from "react"
-import {Outlet } from "react-router-dom"
+import {Navigate, Outlet, useLocation } from "react-router-dom"
 // import Loader from "../loader/Loader";
 import HelmetConfig from "../Includes/Helmet/HelmetConfig";
+import secureLocalStorage from "react-secure-storage";
 
 const MainWrapper = () => {
-    // const location = useLocation();
+    const location = useLocation();
+    const loginData = secureLocalStorage.getItem('LoginData');
+    
     // const [loader, setLoader] = useState(false);
     
-    // useEffect(() => {
     //     console.log("Main Wrapper Running..")
     //     setLoader(true);
 
@@ -16,12 +17,17 @@ const MainWrapper = () => {
     //     },200)
 
         // return ()=>{clearTimeout(timer)}
-    // }, [location?.pathname])
     // console.log(location)
     // if(loader){
     //     <HelmetConfig/>
     //     return <Loader/>
     // }
+    if(location.pathname === "/registered-users"){
+      if(loginData?.username?.toLowerCase() !== "admin"){
+        return <Navigate to={"/home"}/>
+      }
+    }
+    
   return (
     <>
     <HelmetConfig/>

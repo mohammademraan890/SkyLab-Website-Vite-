@@ -54,7 +54,6 @@
     top: 0;
   }
   .properties-section-card p,
-.properties-section-card svg,
 .properties-section-card .circle,
 .properties-section-card h4 {
     transition:  0.5s ease-in-out !important;

@@ -2,6 +2,9 @@ import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import MainWrapper from "./Components/mainWrapper/MainWrapper";
 import DateFormating from "./Components/DateFNS/DateFormating";
+import RegisteredUsers from "./Components/RegisteredUsers/RegisteredUsers";
+import LifeCycle from "./Components/componentLifeCycle/lifeCycle";
+import ArrayMethods from "./Components/ArrayIterateMethods/ArrayMethods";
 const Login = lazy(() => import("./Components/LoginPage/Login"));
 const Registration = lazy(() =>
   import("./Components/Registration/Registration")
@@ -28,7 +31,7 @@ const Form = lazy(() => import("./Components/FormUsingFormik/Formikform"));
 const NotFound = lazy(() => import("./Components/Pages/NotFound/NotFound"));
 const FormikTable = lazy(() => import("./Components/FormikTable/FormikTable"));
 
- export const router = createBrowserRouter([
+export const router = createBrowserRouter([
   {
     element: <MainWrapper />,
     children: [
@@ -51,9 +54,12 @@ const FormikTable = lazy(() => import("./Components/FormikTable/FormikTable"));
           { path: "service/:id", element: <Card /> },
           { path: "usecallback", element: <UseCallback /> },
           { path: "formikform", element: <Form /> },
-          { path: "formiktable", element: <FormikTable/> },
+          { path: "formiktable", element: <FormikTable /> },
           { path: "profile", element: <Profile /> },
           { path: "/date-fns", element: <DateFormating /> },
+          { path: "/registered-users", element: <RegisteredUsers /> },
+          { path: "/LifeCycle", element: <LifeCycle /> },
+          { path: "/arrayMethods", element: <ArrayMethods /> },
           { path: "*", element: <NotFound /> },
         ],
       },

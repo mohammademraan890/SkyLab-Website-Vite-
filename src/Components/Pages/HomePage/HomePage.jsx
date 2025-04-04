@@ -6,17 +6,25 @@ import ServicesSec from "../../Layouts/ServicesSec/ServicesSec";
 import { useLocation } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import { useEffect } from "react";
+import secureLocalStorage from "react-secure-storage";
 
 const HomePage = () => {
   const location = useLocation();
+  const LoginData = secureLocalStorage?.getItem("LoginData");
+  console.log(LoginData);
+  const registrationData = secureLocalStorage?.getItem("registrationData");
 
+  const isAdmin = registrationData?.some((value) =>
+    Object?.values(value)?.includes("test")
+  );
+  console.log(isAdmin);
   useEffect(() => {
     if (location?.state?.showWelcomeToast) {
-      toast.success("You LoggedIn Successfully.", {
+      toast?.success("You LoggedIn Successfully.", {
         position: "top-right",
       });
     }
-    window.history.replaceState({},"");
+    window.history.replaceState({}, "");
   }, [location?.state?.showWelcomeToast]);
   // console.log(window.history);
   return (
