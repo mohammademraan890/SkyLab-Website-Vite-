@@ -1,32 +1,22 @@
 import "./MenuNav.css";
 import { NavLinks } from "../Data/Data";
-import { NavLink } from "react-router-dom";
+import { NavLink, useOutletContext } from "react-router-dom";
 import SocialIcons from "../Includes/SocialIcons/SocialIcons";
 import ThemeButton from "../Includes/ThemeButton/ThemeButton";
 import secureLocalStorage from "react-secure-storage";
-// import { useEffect, useState } from "react";
 
 const MenuNav = () => {
-  // const [isScrolled, setIsScrolled] = useState(false);
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     if (window.scrollY > 100) {
-  //       setIsScrolled(true);
-  //     } else {
-  //       setIsScrolled(false);
-  //     }
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll);
-  // }, []);
-  const Logindata = secureLocalStorage.getItem("LoginData");
+  const {decryptData} = useOutletContext()
+  const stringifyEncrypted_LoginData = localStorage?.getItem("LoginData");
+  const EncryptedLoginData= JSON.parse(stringifyEncrypted_LoginData);
+  const decryptedLoginData= decryptData(EncryptedLoginData)
+  const Logindata= JSON.parse(decryptedLoginData)
   const registerData = secureLocalStorage.getItem("registrationData");
   let user = registerData?.find(
     (obj) => obj?.username.toLowerCase() === Logindata?.username.toLowerCase()
   );
   const userType = user?.userType.toLowerCase();
-  console.log(userType);
+  // console.log(userType);
   return (
     <div className={`menuNav d-sm-block d-none `}>
       <div className="custom-container menuNav-container d-flex justify-content-between align-items-center">

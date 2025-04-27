@@ -1,39 +1,75 @@
-import {Navigate, Outlet, useLocation } from "react-router-dom"
+import { Navigate, Outlet, useLocation, useNavigate } from "react-router-dom";
 // import Loader from "../loader/Loader";
 import HelmetConfig from "../Includes/Helmet/HelmetConfig";
 import secureLocalStorage from "react-secure-storage";
+import { useEffect } from "react";
+import { decodeBase64, decodeUTF8, encodeBase64, encodeUTF8 } from "tweetnacl-util";
+import nacl from "tweetnacl";
 
 const MainWrapper = () => {
-    const location = useLocation();
-    const loginData = secureLocalStorage.getItem('LoginData');
-    
-    // const [loader, setLoader] = useState(false);
-    
-    //     console.log("Main Wrapper Running..")
-    //     setLoader(true);
+  const location = useLocation();
+  const loginData = secureLocalStorage.getItem("LoginData");
+  const navigate = useNavigate();
+  const secret = "my_super_secret_key_1234567890!!";
+  const secretKey = decodeUTF8(secret);
 
-    //   const timer =  setTimeout(() =>{
-    //         setLoader(false);
-    //     },200)
+  useEffect(() => {
+    function handleStorage(e) {
+      console.log(e)
+      console.log("Storage changed");
 
-        // return ()=>{clearTimeout(timer)}
-    // console.log(location)
-    // if(loader){
-    //     <HelmetConfig/>
-    //     return <Loader/>
-    // }
-    if(location.pathname === "/registered-users"){
-      if(loginData?.username?.toLowerCase() !== "admin"){
-        return <Navigate to={"/home"}/>
+      if (e.key === "LoginData") {
+        if (!e.newValue) {
+          navigate("/");
+          document.title="Login || LabSky"
+        } else if (e.newValue) {
+          document.title="Home || LabSky"
+          navigate("/home");
+        }
       }
+      // console.log("LocalStorage Edited")
+      // console.log(e)
     }
-    
+    window.addEventListener("storage", handleStorage);
+    return () => {
+      window.removeEventListener("storage", handleStorage);
+    };
+  }, []);
+  if (location.pathname === "/registered-users") {
+    if (loginData?.username?.toLowerCase() !== "admin") {
+      return <Navigate to={"/home"} />;
+    }
+  }
+   function encryptData(plainText) {
+    const nonce = nacl.randomBytes(24); // 24-byte random nonce
+    const messageUint8 = decodeUTF8(plainText);
+    const encrypted = nacl.secretbox(messageUint8, nonce, secretKey);
+  
+    return {
+      nonce: encodeBase64(nonce),
+      ciphertext: encodeBase64(encrypted),
+    };
+  }
+   function decryptData({ ciphertext, nonce }) {
+    const nonceBytes = decodeBase64(nonce);
+    const encryptedBytes = decodeBase64(ciphertext);
+    const decrypted = nacl.secretbox.open(encryptedBytes, nonceBytes, secretKey);
+  
+    if (!decrypted) {
+      throw new Error("Decryption failed. Possibly wrong key or data corrupted.");
+    }
+
+    return encodeUTF8(decrypted);
+  }
+  
+  // const registrationData = localStorage?.getItem("registrationData")
+  // console.log(registrationData || "")
   return (
     <>
-    <HelmetConfig/>
-    <Outlet/>    
+      <HelmetConfig />
+      <Outlet context={{encryptData,decryptData}} />
     </>
-)
-}
+  );
+};
 
-export default MainWrapper
+export default MainWrapper;

@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 const HelmetConfig = () => {
+  const {id}= useParams()
   const titleData = {
     "/": "Login || Labsky",
     "/signup": "Signup || Labsky",
@@ -17,6 +18,7 @@ const HelmetConfig = () => {
     "/profile": "Profile || Labsky",
     "/date-fns": "DateFNS || Labsky",
     "/registered-users": "Registered Users || Labsky",
+   " /service/${id} " : "servicesDetail || LabSky"
   };
   const titlesArr = Object.keys(titleData);
   // console.log(titlesArr);

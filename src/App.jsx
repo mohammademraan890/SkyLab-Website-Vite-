@@ -1,9 +1,10 @@
 import { RouterProvider } from "react-router-dom";
-import { Suspense } from "react";
 import "./App.css";
 import "./Responsiveness.css";
 import Loader from "./Components/loader/Loader";
 import { router } from "./RouterConfig";
+import AppWrapper from "./Components/AppWrapper/AppWrapper";
+import { Suspense } from "react";
 
 // export const ErrorUI = (props) => {
 //   console.log("Error UI Props:", props);
@@ -38,10 +39,13 @@ import { router } from "./RouterConfig";
 // });
 
 function App() {
+  
   return (
-    <Suspense fallback={<Loader></Loader>}>
-      <RouterProvider router={router} />
-    </Suspense>
+    <AppWrapper>
+      <Suspense fallback={<Loader></Loader>}>
+        <RouterProvider router={router} />
+      </Suspense>
+    </AppWrapper>
   );
 }
 

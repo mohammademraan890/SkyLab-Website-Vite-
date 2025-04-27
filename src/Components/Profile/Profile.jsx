@@ -19,19 +19,23 @@ import { toast, ToastContainer } from "react-toastify";
 
 import ProfileYup from "./ProfileYup";
 import secureLocalStorage from "react-secure-storage";
+import { useOutletContext } from "react-router-dom";
 
 const Profile = () => {
+  const {encryptData,decryptData} = useOutletContext()
   const [showPassword, setShowPassword] = useState(false);
   const storedData = secureLocalStorage?.getItem("registrationData");
-  const loginData = secureLocalStorage?.getItem("LoginData");
+  console.log(storedData)
+  
+  const stringifyEncrypted_LoginData = localStorage?.getItem("LoginData");
+  const EncryptedLoginData= JSON?.parse(stringifyEncrypted_LoginData);
+  const decryptedLoginData= decryptData(EncryptedLoginData)
+  const loginData= JSON.parse(decryptedLoginData)
+  console.log(loginData)
   const profile = storedData?.find(
     (data) =>
       data?.username?.toLowerCase() === loginData?.username?.toLowerCase()
   );
-  console.log(profile);
-  useEffect(() => {
-    signupFormik?.setValues(profile);
-  }, []);
   const signupFormik = useFormik({
     initialValues: {
       name: "",
@@ -48,7 +52,6 @@ const Profile = () => {
       const isEmailExist = storedData?.some(
         (user) => user?.email === values?.email && profile.email !== user.email
       );
-      console.log(isEmailExist);
       const isUsernameExist = storedData?.some(
         (user) =>
           user?.username === values?.username &&
@@ -76,7 +79,18 @@ const Profile = () => {
         signupFormik.setFieldError("username", "Your are not a admin.");
         return;
       }
-
+      const EditLogin= {
+        name:values.name,
+        username: values.username,
+        email: values.email,
+        role: values.username === "admin" ? "admin" : "user",
+        user_id: values.username === "admin" ? 1 : 0 , 
+      }
+      const stringify_EditLogin= JSON.stringify(EditLogin)
+      const encryptedLoginData= encryptData(stringify_EditLogin)
+      console.log(encryptedLoginData)
+      const StringifyEncrypted_LoginData= JSON.stringify(encryptedLoginData)
+      localStorage?.setItem("LoginData",StringifyEncrypted_LoginData)
       const updatedProfile = { ...profile, ...values };
       const updatedData = storedData?.map((user) =>
         user?.username === profile?.username ? updatedProfile : user
@@ -84,13 +98,22 @@ const Profile = () => {
       // console.log(updatedData);
       // console.log(updatedProfile);
       secureLocalStorage?.setItem("registrationData", updatedData);
-
+      window.location.reload()
       toast.success("Your account is eddited.", {
         position: "top-right",
       });
+      
     },
+    
+    
   });
-
+  useEffect(()=>{
+    // console.log(profile);
+    if(profile){
+      signupFormik?.setValues(profile)
+      console.log("values set")
+    }
+    },[profile])
   const nameErr = signupFormik?.touched?.name && signupFormik?.errors?.name;
   const usernameErr =
     signupFormik?.touched?.username && signupFormik?.errors?.username;

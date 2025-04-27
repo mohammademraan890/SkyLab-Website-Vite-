@@ -12,14 +12,18 @@ import { useEffect, useState } from "react";
 import { AccountCircle, Visibility, VisibilityOff } from "@mui/icons-material";
 import { useFormik } from "formik";
 import validationSchema from "./YUP";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate, useOutletContext } from "react-router-dom";
 import secureLocalStorage from "react-secure-storage";
 import { toast, ToastContainer } from "react-toastify";
 
+
+
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+ const {encryptData, decryptData} = useOutletContext();
   const location = useLocation();
   const navigate = useNavigate();
+  
   const loginFormik = useFormik({
     initialValues: {
       username: "",
@@ -33,7 +37,7 @@ const Login = () => {
       const storedData = signupData?.find(
         (obj) => obj?.username?.toLowerCase() === username?.toLowerCase() && obj?.password === password
       );
-      console.log(storedData)
+      // console.log(storedData)
       if (storedData) {
        const LoginData = {
           username: username,
@@ -42,10 +46,14 @@ const Login = () => {
           user_id: username === "admin" ? 1 : 0,
           email : storedData.email, 
         };
-        secureLocalStorage.setItem("LoginData", LoginData);
+        const stringFormat_LoginData= JSON.stringify(LoginData)
+        const encryptedLoginData= encryptData(stringFormat_LoginData)
+        const stringifyEncrypted_LoginData= JSON.stringify(encryptedLoginData)
+        console.log(stringifyEncrypted_LoginData)
+        localStorage?.setItem("LoginData",stringifyEncrypted_LoginData)
+      //  secureLocalStorage.setItem("LoginData", LoginData);
         loginFormik.handleReset();
         navigate("/home", { state: { showWelcomeToast: true } });
-        
       } else {
         loginFormik?.setFieldError("username", "Username is invalid");
         loginFormik?.setFieldError("password", "Password is invalid");

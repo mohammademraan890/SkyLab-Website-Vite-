@@ -1,8 +1,9 @@
 import { Link, useNavigate } from "react-router-dom";
 import "./TopNav.css";
-import secureLocalStorage from "react-secure-storage";
+// import { useEffect } from "react";
 export const TopNav = () => {
   const navigate = useNavigate();
+
   return (
     <div className="topnav">
       <div className=" custom-container topnav-container d-flex justify-content-between align-items-center">
@@ -55,15 +56,16 @@ export const TopNav = () => {
             </li>
           </ul>
         </div>
-            <button
-              className="btn btn-primary"
-              onClick={() => {
-                secureLocalStorage.removeItem("LoginData");
-                navigate("/" , { state: { showToast: true } });
-              }}
-            >
-              Logout
-            </button>
+        <button
+          className="btn btn-primary"
+          onClick={() => {
+            localStorage.removeItem("LoginData");
+            navigate("/");
+          }}
+        >
+          Logout
+        </button>
+        
       </div>
     </div>
   );

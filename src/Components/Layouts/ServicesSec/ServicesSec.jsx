@@ -21,8 +21,10 @@ import ServiceCard from "../../Includes/ServiceCard/ServiceCard";
         </p>
         <div className="services-section-cards-sec w-100 ">
           {SrvicesCardsData?.map((card) => {
+           
             return (
-                <ServiceCard key={card?.id}
+             card.id < 9 &&  <ServiceCard key={card?.id}
+                  id={card?.id}
                   svg1={card?.svg}
                   title={card?.title}
                   desc={card?.description}

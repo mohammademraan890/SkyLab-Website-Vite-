@@ -2,7 +2,8 @@ import PropTypes from "prop-types"; // Step 1: Import PropTypes
 import "./ServiceCard.css";
 import ServicesBtn from "../ServicesBtn/ServicesBtn";
 
-const ServiceCard = ({ svg1, title, desc, showHover = false, showBtn = false }) => {
+const ServiceCard = ({ id, svg1, title, desc, showHover = false, showBtn = false }) => {
+  // console.log(id)
   return (
     <div className="properties-section-card d-flex text-start flex-column">
       {showHover && <div className="properties-sec-overlay"></div>}
@@ -13,12 +14,13 @@ const ServiceCard = ({ svg1, title, desc, showHover = false, showBtn = false }) 
       <h4 className="fw-bold">{title}</h4>
       <p>{desc}</p>
       
-      {showBtn && <ServicesBtn />}
+      {showBtn && <ServicesBtn id={id} />}
     </div>
   );
 };
 
 ServiceCard.propTypes = {
+  id:PropTypes.number,
   svg1: PropTypes.node.isRequired,
   title: PropTypes.string.isRequired, 
   desc: PropTypes.string.isRequired,

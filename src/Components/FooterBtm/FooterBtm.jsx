@@ -1,5 +1,6 @@
 import './FooterBtm.css'
 const FooterBtm = () => {
+ 
   return (
     <div className="footer-bottom">
     <div className="footer-bottom-container custom-container">

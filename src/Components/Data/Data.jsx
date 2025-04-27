@@ -350,7 +350,404 @@ export const SrvicesCardsData = [
       <path
           d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1" />
   </svg>),
-  }
+  },
+  {
+    id: 9,
+    title: "Pathology Testing",
+    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisquam, quos.",
+    url:"/service/9",
+    svg: (<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      className="bi bi-heart-pulse" viewBox="0 0 16 16">
+      <path
+          d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053.918 3.995.78 5.323 1.508 7H.43c-2.128-5.697 4.165-8.83 7.394-5.857q.09.083.176.171a3 3 0 0 1 .176-.17c3.23-2.974 9.522.159 7.394 5.856h-1.078c.728-1.677.59-3.005.108-3.947C13.486.878 10.4.28 8.717 2.01zM2.212 10h1.315C4.593 11.183 6.05 12.458 8 13.795c1.949-1.337 3.407-2.612 4.473-3.795h1.315c-1.265 1.566-3.14 3.25-5.788 5-2.648-1.75-4.523-3.434-5.788-5" />
+      <path
+          d="M10.464 3.314a.5.5 0 0 0-.945.049L7.921 8.956 6.464 5.314a.5.5 0 0 0-.88-.091L3.732 8H.5a.5.5 0 0 0 0 1H4a.5.5 0 0 0 .416-.223l1.473-2.209 1.647 4.118a.5.5 0 0 0 .945-.049l1.598-5.593 1.457 3.642A.5.5 0 0 0 12 9h3.5a.5.5 0 0 0 0-1h-3.162z" />
+  </svg>),
+  },
+  {
+    id: 10,
+    title: "Microbiology Tests",
+    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisquam, quos.",
+    url:"/service/10",
+    svg: ( <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      className="bi bi-lungs" viewBox="0 0 16 16">
+      <path
+          d="M8.5 1.5a.5.5 0 1 0-1 0v5.243L7 7.1V4.72C7 3.77 6.23 3 5.28 3c-.524 0-1.023.27-1.443.592-.431.332-.847.773-1.216 1.229-.736.908-1.347 1.946-1.58 2.48-.176.405-.393 1.16-.556 2.011-.165.857-.283 1.857-.241 2.759.04.867.233 1.79.838 2.33.67.6 1.622.556 2.741-.004l1.795-.897A2.5 2.5 0 0 0 7 11.264V10.5a.5.5 0 0 0-1 0v.764a1.5 1.5 0 0 1-.83 1.342l-1.794.897c-.978.489-1.415.343-1.628.152-.28-.25-.467-.801-.505-1.63-.037-.795.068-1.71.224-2.525.157-.82.357-1.491.491-1.8.19-.438.75-1.4 1.44-2.25.342-.422.703-.799 1.049-1.065.358-.276.639-.385.833-.385a.72.72 0 0 1 .72.72v3.094l-1.79 1.28a.5.5 0 0 0 .58.813L8 7.614l3.21 2.293a.5.5 0 1 0 .58-.814L10 7.814V4.72a.72.72 0 0 1 .72-.72c.194 0 .475.11.833.385.346.266.706.643 1.05 1.066.688.85 1.248 1.811 1.439 2.249.134.309.334.98.491 1.8.156.814.26 1.73.224 2.525-.038.829-.224 1.38-.505 1.63-.213.19-.65.337-1.628-.152l-1.795-.897A1.5 1.5 0 0 1 10 11.264V10.5a.5.5 0 0 0-1 0v.764a2.5 2.5 0 0 0 1.382 2.236l1.795.897c1.12.56 2.07.603 2.741.004.605-.54.798-1.463.838-2.33.042-.902-.076-1.902-.24-2.759-.164-.852-.38-1.606-.558-2.012-.232-.533-.843-1.571-1.579-2.479-.37-.456-.785-.897-1.216-1.229C11.743 3.27 11.244 3 10.72 3 9.77 3 9 3.77 9 4.72V7.1l-.5-.357z" />
+  </svg>),
+  },
+  {
+    id: 11,
+    title: "Biochemistry Tests",
+    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisquam, quos.",
+    url:"/service/11",
+    svg: (<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      className="bi bi-bug-fill" viewBox="0 0 16 16">
+      <path
+          d="M4.978.855a.5.5 0 1 0-.956.29l.41 1.352A5 5 0 0 0 3 6h10a5 5 0 0 0-1.432-3.503l.41-1.352a.5.5 0 1 0-.956-.29l-.291.956A5 5 0 0 0 8 1a5 5 0 0 0-2.731.811l-.29-.956z" />
+      <path
+          d="M13 6v1H8.5v8.975A5 5 0 0 0 13 11h.5a.5.5 0 0 1 .5.5v.5a.5.5 0 1 0 1 0v-.5a1.5 1.5 0 0 0-1.5-1.5H13V9h1.5a.5.5 0 0 0 0-1H13V7h.5A1.5 1.5 0 0 0 15 5.5V5a.5.5 0 0 0-1 0v.5a.5.5 0 0 1-.5.5zm-5.5 9.975V7H3V6h-.5a.5.5 0 0 1-.5-.5V5a.5.5 0 0 0-1 0v.5A1.5 1.5 0 0 0 2.5 7H3v1H1.5a.5.5 0 0 0 0 1H3v1h-.5A1.5 1.5 0 0 0 1 11.5v.5a.5.5 0 1 0 1 0v-.5a.5.5 0 0 1 .5-.5H3a5 5 0 0 0 4.5 4.975" />
+  </svg>),
+  },
+  {
+    id: 12,
+    title: "Histopathology Tests",
+    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisquam, quos.",
+    url:"/service/12",
+    svg: ( <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      className="bi bi-capsule-pill" viewBox="0 0 16 16">
+      <path
+          d="M11.02 5.364a3 3 0 0 0-4.242-4.243L1.121 6.778a3 3 0 1 0 4.243 4.243l5.657-5.657Zm-6.413-.657 2.878-2.879a2 2 0 1 1 2.829 2.829L7.435 7.536zM12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8m-.5 1.042a3 3 0 0 0 0 5.917zm1 5.917a3 3 0 0 0 0-5.917z" />
+  </svg>),
+  },
+  {
+    id: 13,
+    title: "Urine Tests",
+    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisquam, quos.",
+    url:"/service/13",
+    svg: (<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      className="bi bi-capsule" viewBox="0 0 16 16">
+      <path
+          d="M1.828 8.9 8.9 1.827a4 4 0 1 1 5.657 5.657l-7.07 7.071A4 4 0 1 1 1.827 8.9Zm9.128.771 2.893-2.893a3 3 0 1 0-4.243-4.242L6.713 5.429z" />
+  </svg>),
+  },
+  {
+    id: 14,
+    title: "Blood Tests",
+    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisquam, quos.",
+    url:"/service/14",
+    svg: ( <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      className="bi bi-prescription2" viewBox="0 0 16 16">
+      <path d="M7 6h2v2h2v2H9v2H7v-2H5V8h2z" />
+      <path
+          d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v10.5a1.5 1.5 0 0 1-1.5 1.5h-7A1.5 1.5 0 0 1 3 14.5V4a1 1 0 0 1-1-1zm2 3v10.5a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5V4zM3 3h10V1H3z" />
+  </svg>),
+  },
+  {
+    id: 15,
+    title: "Fever Tests",
+    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisquam, quos.",
+    url:"/service/15",
+    svg:(<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      className="bi bi-clipboard2-pulse" viewBox="0 0 16 16">
+      <path
+          d="M9.5 0a.5.5 0 0 1 .5.5.5.5 0 0 0 .5.5.5.5 0 0 1 .5.5V2a.5.5 0 0 1-.5.5h-5A.5.5 0 0 1 5 2v-.5a.5.5 0 0 1 .5-.5.5.5 0 0 0 .5-.5.5.5 0 0 1 .5-.5z" />
+      <path
+          d="M3 2.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 0 0-1h-.5A1.5 1.5 0 0 0 2 2.5v12A1.5 1.5 0 0 0 3.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-12A1.5 1.5 0 0 0 12.5 1H12a.5.5 0 0 0 0 1h.5a.5.5 0 0 1 .5.5v12a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5z" />
+      <path
+          d="M9.979 5.356a.5.5 0 0 0-.968.04L7.92 10.49l-.94-3.135a.5.5 0 0 0-.926-.08L4.69 10H4.5a.5.5 0 0 0 0 1H5a.5.5 0 0 0 .447-.276l.936-1.873 1.138 3.793a.5.5 0 0 0 .968-.04L9.58 7.51l.94 3.135A.5.5 0 0 0 11 11h.5a.5.5 0 0 0 0-1h-.128z" />
+  </svg>),
+  },
+  {
+    id: 16,
+    title: "Allergy Tests",
+    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisquam, quos.",
+    url:"/service/16",
+    svg: ( <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      className="bi bi-file-diff" viewBox="0 0 16 16">
+      <path
+          d="M8 4a.5.5 0 0 1 .5.5V6H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V7H6a.5.5 0 0 1 0-1h1.5V4.5A.5.5 0 0 1 8 4m-2.5 6.5A.5.5 0 0 1 6 10h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5" />
+      <path
+          d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1" />
+  </svg>),
+  },
+  {
+    id: 17,
+    title: "Pathology Testing",
+    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisquam, quos.",
+    url:"/service/17",
+    svg: (<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      className="bi bi-heart-pulse" viewBox="0 0 16 16">
+      <path
+          d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053.918 3.995.78 5.323 1.508 7H.43c-2.128-5.697 4.165-8.83 7.394-5.857q.09.083.176.171a3 3 0 0 1 .176-.17c3.23-2.974 9.522.159 7.394 5.856h-1.078c.728-1.677.59-3.005.108-3.947C13.486.878 10.4.28 8.717 2.01zM2.212 10h1.315C4.593 11.183 6.05 12.458 8 13.795c1.949-1.337 3.407-2.612 4.473-3.795h1.315c-1.265 1.566-3.14 3.25-5.788 5-2.648-1.75-4.523-3.434-5.788-5" />
+      <path
+          d="M10.464 3.314a.5.5 0 0 0-.945.049L7.921 8.956 6.464 5.314a.5.5 0 0 0-.88-.091L3.732 8H.5a.5.5 0 0 0 0 1H4a.5.5 0 0 0 .416-.223l1.473-2.209 1.647 4.118a.5.5 0 0 0 .945-.049l1.598-5.593 1.457 3.642A.5.5 0 0 0 12 9h3.5a.5.5 0 0 0 0-1h-3.162z" />
+  </svg>),
+  },
+  {
+    id: 18,
+    title: "Microbiology Tests",
+    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisquam, quos.",
+    url:"/service/18",
+    svg: ( <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      className="bi bi-lungs" viewBox="0 0 16 16">
+      <path
+          d="M8.5 1.5a.5.5 0 1 0-1 0v5.243L7 7.1V4.72C7 3.77 6.23 3 5.28 3c-.524 0-1.023.27-1.443.592-.431.332-.847.773-1.216 1.229-.736.908-1.347 1.946-1.58 2.48-.176.405-.393 1.16-.556 2.011-.165.857-.283 1.857-.241 2.759.04.867.233 1.79.838 2.33.67.6 1.622.556 2.741-.004l1.795-.897A2.5 2.5 0 0 0 7 11.264V10.5a.5.5 0 0 0-1 0v.764a1.5 1.5 0 0 1-.83 1.342l-1.794.897c-.978.489-1.415.343-1.628.152-.28-.25-.467-.801-.505-1.63-.037-.795.068-1.71.224-2.525.157-.82.357-1.491.491-1.8.19-.438.75-1.4 1.44-2.25.342-.422.703-.799 1.049-1.065.358-.276.639-.385.833-.385a.72.72 0 0 1 .72.72v3.094l-1.79 1.28a.5.5 0 0 0 .58.813L8 7.614l3.21 2.293a.5.5 0 1 0 .58-.814L10 7.814V4.72a.72.72 0 0 1 .72-.72c.194 0 .475.11.833.385.346.266.706.643 1.05 1.066.688.85 1.248 1.811 1.439 2.249.134.309.334.98.491 1.8.156.814.26 1.73.224 2.525-.038.829-.224 1.38-.505 1.63-.213.19-.65.337-1.628-.152l-1.795-.897A1.5 1.5 0 0 1 10 11.264V10.5a.5.5 0 0 0-1 0v.764a2.5 2.5 0 0 0 1.382 2.236l1.795.897c1.12.56 2.07.603 2.741.004.605-.54.798-1.463.838-2.33.042-.902-.076-1.902-.24-2.759-.164-.852-.38-1.606-.558-2.012-.232-.533-.843-1.571-1.579-2.479-.37-.456-.785-.897-1.216-1.229C11.743 3.27 11.244 3 10.72 3 9.77 3 9 3.77 9 4.72V7.1l-.5-.357z" />
+  </svg>),
+  },
+  {
+    id: 19,
+    title: "Biochemistry Tests",
+    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisquam, quos.",
+    url:"/service/19",
+    svg: (<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      className="bi bi-bug-fill" viewBox="0 0 16 16">
+      <path
+          d="M4.978.855a.5.5 0 1 0-.956.29l.41 1.352A5 5 0 0 0 3 6h10a5 5 0 0 0-1.432-3.503l.41-1.352a.5.5 0 1 0-.956-.29l-.291.956A5 5 0 0 0 8 1a5 5 0 0 0-2.731.811l-.29-.956z" />
+      <path
+          d="M13 6v1H8.5v8.975A5 5 0 0 0 13 11h.5a.5.5 0 0 1 .5.5v.5a.5.5 0 1 0 1 0v-.5a1.5 1.5 0 0 0-1.5-1.5H13V9h1.5a.5.5 0 0 0 0-1H13V7h.5A1.5 1.5 0 0 0 15 5.5V5a.5.5 0 0 0-1 0v.5a.5.5 0 0 1-.5.5zm-5.5 9.975V7H3V6h-.5a.5.5 0 0 1-.5-.5V5a.5.5 0 0 0-1 0v.5A1.5 1.5 0 0 0 2.5 7H3v1H1.5a.5.5 0 0 0 0 1H3v1h-.5A1.5 1.5 0 0 0 1 11.5v.5a.5.5 0 1 0 1 0v-.5a.5.5 0 0 1 .5-.5H3a5 5 0 0 0 4.5 4.975" />
+  </svg>),
+  },
+  {
+    id: 20,
+    title: "Histopathology Tests",
+    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisquam, quos.",
+    url:"/service/20",
+    svg: ( <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      className="bi bi-capsule-pill" viewBox="0 0 16 16">
+      <path
+          d="M11.02 5.364a3 3 0 0 0-4.242-4.243L1.121 6.778a3 3 0 1 0 4.243 4.243l5.657-5.657Zm-6.413-.657 2.878-2.879a2 2 0 1 1 2.829 2.829L7.435 7.536zM12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8m-.5 1.042a3 3 0 0 0 0 5.917zm1 5.917a3 3 0 0 0 0-5.917z" />
+  </svg>),
+  },
+  {
+    id: 21,
+    title: "Urine Tests",
+    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisquam, quos.",
+    url:"/service/21",
+    svg: (<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      className="bi bi-capsule" viewBox="0 0 16 16">
+      <path
+          d="M1.828 8.9 8.9 1.827a4 4 0 1 1 5.657 5.657l-7.07 7.071A4 4 0 1 1 1.827 8.9Zm9.128.771 2.893-2.893a3 3 0 1 0-4.243-4.242L6.713 5.429z" />
+  </svg>),
+  },
+  {
+    id: 22,
+    title: "Blood Tests",
+    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisquam, quos.",
+    url:"/service/22",
+    svg: ( <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      className="bi bi-prescription2" viewBox="0 0 16 16">
+      <path d="M7 6h2v2h2v2H9v2H7v-2H5V8h2z" />
+      <path
+          d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v10.5a1.5 1.5 0 0 1-1.5 1.5h-7A1.5 1.5 0 0 1 3 14.5V4a1 1 0 0 1-1-1zm2 3v10.5a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5V4zM3 3h10V1H3z" />
+  </svg>),
+  },
+  {
+    id: 23,
+    title: "Fever Tests",
+    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisquam, quos.",
+    url:"/service/23",
+    svg:(<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      className="bi bi-clipboard2-pulse" viewBox="0 0 16 16">
+      <path
+          d="M9.5 0a.5.5 0 0 1 .5.5.5.5 0 0 0 .5.5.5.5 0 0 1 .5.5V2a.5.5 0 0 1-.5.5h-5A.5.5 0 0 1 5 2v-.5a.5.5 0 0 1 .5-.5.5.5 0 0 0 .5-.5.5.5 0 0 1 .5-.5z" />
+      <path
+          d="M3 2.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 0 0-1h-.5A1.5 1.5 0 0 0 2 2.5v12A1.5 1.5 0 0 0 3.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-12A1.5 1.5 0 0 0 12.5 1H12a.5.5 0 0 0 0 1h.5a.5.5 0 0 1 .5.5v12a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5z" />
+      <path
+          d="M9.979 5.356a.5.5 0 0 0-.968.04L7.92 10.49l-.94-3.135a.5.5 0 0 0-.926-.08L4.69 10H4.5a.5.5 0 0 0 0 1H5a.5.5 0 0 0 .447-.276l.936-1.873 1.138 3.793a.5.5 0 0 0 .968-.04L9.58 7.51l.94 3.135A.5.5 0 0 0 11 11h.5a.5.5 0 0 0 0-1h-.128z" />
+  </svg>),
+  },
+  {
+    id: 24,
+    title: "Allergy Tests",
+    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisquam, quos.",
+    url:"/service/24",
+    svg: ( <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      className="bi bi-file-diff" viewBox="0 0 16 16">
+      <path
+          d="M8 4a.5.5 0 0 1 .5.5V6H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V7H6a.5.5 0 0 1 0-1h1.5V4.5A.5.5 0 0 1 8 4m-2.5 6.5A.5.5 0 0 1 6 10h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5" />
+      <path
+          d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1" />
+  </svg>),
+  },
+  {
+    id: 25,
+    title: "Pathology Testing",
+    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisquam, quos.",
+    url:"/service/25",
+    svg: (<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      className="bi bi-heart-pulse" viewBox="0 0 16 16">
+      <path
+          d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053.918 3.995.78 5.323 1.508 7H.43c-2.128-5.697 4.165-8.83 7.394-5.857q.09.083.176.171a3 3 0 0 1 .176-.17c3.23-2.974 9.522.159 7.394 5.856h-1.078c.728-1.677.59-3.005.108-3.947C13.486.878 10.4.28 8.717 2.01zM2.212 10h1.315C4.593 11.183 6.05 12.458 8 13.795c1.949-1.337 3.407-2.612 4.473-3.795h1.315c-1.265 1.566-3.14 3.25-5.788 5-2.648-1.75-4.523-3.434-5.788-5" />
+      <path
+          d="M10.464 3.314a.5.5 0 0 0-.945.049L7.921 8.956 6.464 5.314a.5.5 0 0 0-.88-.091L3.732 8H.5a.5.5 0 0 0 0 1H4a.5.5 0 0 0 .416-.223l1.473-2.209 1.647 4.118a.5.5 0 0 0 .945-.049l1.598-5.593 1.457 3.642A.5.5 0 0 0 12 9h3.5a.5.5 0 0 0 0-1h-3.162z" />
+  </svg>),
+  },
+  {
+    id: 26,
+    title: "Microbiology Tests",
+    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisquam, quos.",
+    url:"/service/26",
+    svg: ( <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      className="bi bi-lungs" viewBox="0 0 16 16">
+      <path
+          d="M8.5 1.5a.5.5 0 1 0-1 0v5.243L7 7.1V4.72C7 3.77 6.23 3 5.28 3c-.524 0-1.023.27-1.443.592-.431.332-.847.773-1.216 1.229-.736.908-1.347 1.946-1.58 2.48-.176.405-.393 1.16-.556 2.011-.165.857-.283 1.857-.241 2.759.04.867.233 1.79.838 2.33.67.6 1.622.556 2.741-.004l1.795-.897A2.5 2.5 0 0 0 7 11.264V10.5a.5.5 0 0 0-1 0v.764a1.5 1.5 0 0 1-.83 1.342l-1.794.897c-.978.489-1.415.343-1.628.152-.28-.25-.467-.801-.505-1.63-.037-.795.068-1.71.224-2.525.157-.82.357-1.491.491-1.8.19-.438.75-1.4 1.44-2.25.342-.422.703-.799 1.049-1.065.358-.276.639-.385.833-.385a.72.72 0 0 1 .72.72v3.094l-1.79 1.28a.5.5 0 0 0 .58.813L8 7.614l3.21 2.293a.5.5 0 1 0 .58-.814L10 7.814V4.72a.72.72 0 0 1 .72-.72c.194 0 .475.11.833.385.346.266.706.643 1.05 1.066.688.85 1.248 1.811 1.439 2.249.134.309.334.98.491 1.8.156.814.26 1.73.224 2.525-.038.829-.224 1.38-.505 1.63-.213.19-.65.337-1.628-.152l-1.795-.897A1.5 1.5 0 0 1 10 11.264V10.5a.5.5 0 0 0-1 0v.764a2.5 2.5 0 0 0 1.382 2.236l1.795.897c1.12.56 2.07.603 2.741.004.605-.54.798-1.463.838-2.33.042-.902-.076-1.902-.24-2.759-.164-.852-.38-1.606-.558-2.012-.232-.533-.843-1.571-1.579-2.479-.37-.456-.785-.897-1.216-1.229C11.743 3.27 11.244 3 10.72 3 9.77 3 9 3.77 9 4.72V7.1l-.5-.357z" />
+  </svg>),
+  },
+  {
+    id: 27,
+    title: "Biochemistry Tests",
+    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisquam, quos.",
+    url:"/service/27",
+    svg: (<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      className="bi bi-bug-fill" viewBox="0 0 16 16">
+      <path
+          d="M4.978.855a.5.5 0 1 0-.956.29l.41 1.352A5 5 0 0 0 3 6h10a5 5 0 0 0-1.432-3.503l.41-1.352a.5.5 0 1 0-.956-.29l-.291.956A5 5 0 0 0 8 1a5 5 0 0 0-2.731.811l-.29-.956z" />
+      <path
+          d="M13 6v1H8.5v8.975A5 5 0 0 0 13 11h.5a.5.5 0 0 1 .5.5v.5a.5.5 0 1 0 1 0v-.5a1.5 1.5 0 0 0-1.5-1.5H13V9h1.5a.5.5 0 0 0 0-1H13V7h.5A1.5 1.5 0 0 0 15 5.5V5a.5.5 0 0 0-1 0v.5a.5.5 0 0 1-.5.5zm-5.5 9.975V7H3V6h-.5a.5.5 0 0 1-.5-.5V5a.5.5 0 0 0-1 0v.5A1.5 1.5 0 0 0 2.5 7H3v1H1.5a.5.5 0 0 0 0 1H3v1h-.5A1.5 1.5 0 0 0 1 11.5v.5a.5.5 0 1 0 1 0v-.5a.5.5 0 0 1 .5-.5H3a5 5 0 0 0 4.5 4.975" />
+  </svg>),
+  },
+  {
+    id: 28,
+    title: "Histopathology Tests",
+    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisquam, quos.",
+    url:"/service/28",
+    svg: ( <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      className="bi bi-capsule-pill" viewBox="0 0 16 16">
+      <path
+          d="M11.02 5.364a3 3 0 0 0-4.242-4.243L1.121 6.778a3 3 0 1 0 4.243 4.243l5.657-5.657Zm-6.413-.657 2.878-2.879a2 2 0 1 1 2.829 2.829L7.435 7.536zM12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8m-.5 1.042a3 3 0 0 0 0 5.917zm1 5.917a3 3 0 0 0 0-5.917z" />
+  </svg>),
+  },
+  {
+    id: 29,
+    title: "Urine Tests",
+    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisquam, quos.",
+    url:"/service/29",
+    svg: (<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      className="bi bi-capsule" viewBox="0 0 16 16">
+      <path
+          d="M1.828 8.9 8.9 1.827a4 4 0 1 1 5.657 5.657l-7.07 7.071A4 4 0 1 1 1.827 8.9Zm9.128.771 2.893-2.893a3 3 0 1 0-4.243-4.242L6.713 5.429z" />
+  </svg>),
+  },
+  {
+    id: 30,
+    title: "Blood Tests",
+    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisquam, quos.",
+    url:"/service/30",
+    svg: ( <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      className="bi bi-prescription2" viewBox="0 0 16 16">
+      <path d="M7 6h2v2h2v2H9v2H7v-2H5V8h2z" />
+      <path
+          d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v10.5a1.5 1.5 0 0 1-1.5 1.5h-7A1.5 1.5 0 0 1 3 14.5V4a1 1 0 0 1-1-1zm2 3v10.5a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5V4zM3 3h10V1H3z" />
+  </svg>),
+  },
+  {
+    id: 31,
+    title: "Fever Tests",
+    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisquam, quos.",
+    url:"/service/31",
+    svg:(<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      className="bi bi-clipboard2-pulse" viewBox="0 0 16 16">
+      <path
+          d="M9.5 0a.5.5 0 0 1 .5.5.5.5 0 0 0 .5.5.5.5 0 0 1 .5.5V2a.5.5 0 0 1-.5.5h-5A.5.5 0 0 1 5 2v-.5a.5.5 0 0 1 .5-.5.5.5 0 0 0 .5-.5.5.5 0 0 1 .5-.5z" />
+      <path
+          d="M3 2.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 0 0-1h-.5A1.5 1.5 0 0 0 2 2.5v12A1.5 1.5 0 0 0 3.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-12A1.5 1.5 0 0 0 12.5 1H12a.5.5 0 0 0 0 1h.5a.5.5 0 0 1 .5.5v12a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5z" />
+      <path
+          d="M9.979 5.356a.5.5 0 0 0-.968.04L7.92 10.49l-.94-3.135a.5.5 0 0 0-.926-.08L4.69 10H4.5a.5.5 0 0 0 0 1H5a.5.5 0 0 0 .447-.276l.936-1.873 1.138 3.793a.5.5 0 0 0 .968-.04L9.58 7.51l.94 3.135A.5.5 0 0 0 11 11h.5a.5.5 0 0 0 0-1h-.128z" />
+  </svg>),
+  },
+  {
+    id: 32,
+    title: "Allergy Tests",
+    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisquam, quos.",
+    url:"/service/32",
+    svg: ( <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      className="bi bi-file-diff" viewBox="0 0 16 16">
+      <path
+          d="M8 4a.5.5 0 0 1 .5.5V6H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V7H6a.5.5 0 0 1 0-1h1.5V4.5A.5.5 0 0 1 8 4m-2.5 6.5A.5.5 0 0 1 6 10h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5" />
+      <path
+          d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1" />
+  </svg>),
+  },
+  {
+    id: 33,
+    title: "Pathology Testing",
+    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisquam, quos.",
+    url:"/service/33",
+    svg: (<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      className="bi bi-heart-pulse" viewBox="0 0 16 16">
+      <path
+          d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053.918 3.995.78 5.323 1.508 7H.43c-2.128-5.697 4.165-8.83 7.394-5.857q.09.083.176.171a3 3 0 0 1 .176-.17c3.23-2.974 9.522.159 7.394 5.856h-1.078c.728-1.677.59-3.005.108-3.947C13.486.878 10.4.28 8.717 2.01zM2.212 10h1.315C4.593 11.183 6.05 12.458 8 13.795c1.949-1.337 3.407-2.612 4.473-3.795h1.315c-1.265 1.566-3.14 3.25-5.788 5-2.648-1.75-4.523-3.434-5.788-5" />
+      <path
+          d="M10.464 3.314a.5.5 0 0 0-.945.049L7.921 8.956 6.464 5.314a.5.5 0 0 0-.88-.091L3.732 8H.5a.5.5 0 0 0 0 1H4a.5.5 0 0 0 .416-.223l1.473-2.209 1.647 4.118a.5.5 0 0 0 .945-.049l1.598-5.593 1.457 3.642A.5.5 0 0 0 12 9h3.5a.5.5 0 0 0 0-1h-3.162z" />
+  </svg>),
+  },
+  {
+    id: 34,
+    title: "Microbiology Tests",
+    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisquam, quos.",
+    url:"/service/34",
+    svg: ( <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      className="bi bi-lungs" viewBox="0 0 16 16">
+      <path
+          d="M8.5 1.5a.5.5 0 1 0-1 0v5.243L7 7.1V4.72C7 3.77 6.23 3 5.28 3c-.524 0-1.023.27-1.443.592-.431.332-.847.773-1.216 1.229-.736.908-1.347 1.946-1.58 2.48-.176.405-.393 1.16-.556 2.011-.165.857-.283 1.857-.241 2.759.04.867.233 1.79.838 2.33.67.6 1.622.556 2.741-.004l1.795-.897A2.5 2.5 0 0 0 7 11.264V10.5a.5.5 0 0 0-1 0v.764a1.5 1.5 0 0 1-.83 1.342l-1.794.897c-.978.489-1.415.343-1.628.152-.28-.25-.467-.801-.505-1.63-.037-.795.068-1.71.224-2.525.157-.82.357-1.491.491-1.8.19-.438.75-1.4 1.44-2.25.342-.422.703-.799 1.049-1.065.358-.276.639-.385.833-.385a.72.72 0 0 1 .72.72v3.094l-1.79 1.28a.5.5 0 0 0 .58.813L8 7.614l3.21 2.293a.5.5 0 1 0 .58-.814L10 7.814V4.72a.72.72 0 0 1 .72-.72c.194 0 .475.11.833.385.346.266.706.643 1.05 1.066.688.85 1.248 1.811 1.439 2.249.134.309.334.98.491 1.8.156.814.26 1.73.224 2.525-.038.829-.224 1.38-.505 1.63-.213.19-.65.337-1.628-.152l-1.795-.897A1.5 1.5 0 0 1 10 11.264V10.5a.5.5 0 0 0-1 0v.764a2.5 2.5 0 0 0 1.382 2.236l1.795.897c1.12.56 2.07.603 2.741.004.605-.54.798-1.463.838-2.33.042-.902-.076-1.902-.24-2.759-.164-.852-.38-1.606-.558-2.012-.232-.533-.843-1.571-1.579-2.479-.37-.456-.785-.897-1.216-1.229C11.743 3.27 11.244 3 10.72 3 9.77 3 9 3.77 9 4.72V7.1l-.5-.357z" />
+  </svg>),
+  },
+  {
+    id: 35,
+    title: "Biochemistry Tests",
+    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisquam, quos.",
+    url:"/service/35",
+    svg: (<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      className="bi bi-bug-fill" viewBox="0 0 16 16">
+      <path
+          d="M4.978.855a.5.5 0 1 0-.956.29l.41 1.352A5 5 0 0 0 3 6h10a5 5 0 0 0-1.432-3.503l.41-1.352a.5.5 0 1 0-.956-.29l-.291.956A5 5 0 0 0 8 1a5 5 0 0 0-2.731.811l-.29-.956z" />
+      <path
+          d="M13 6v1H8.5v8.975A5 5 0 0 0 13 11h.5a.5.5 0 0 1 .5.5v.5a.5.5 0 1 0 1 0v-.5a1.5 1.5 0 0 0-1.5-1.5H13V9h1.5a.5.5 0 0 0 0-1H13V7h.5A1.5 1.5 0 0 0 15 5.5V5a.5.5 0 0 0-1 0v.5a.5.5 0 0 1-.5.5zm-5.5 9.975V7H3V6h-.5a.5.5 0 0 1-.5-.5V5a.5.5 0 0 0-1 0v.5A1.5 1.5 0 0 0 2.5 7H3v1H1.5a.5.5 0 0 0 0 1H3v1h-.5A1.5 1.5 0 0 0 1 11.5v.5a.5.5 0 1 0 1 0v-.5a.5.5 0 0 1 .5-.5H3a5 5 0 0 0 4.5 4.975" />
+  </svg>),
+  },
+  {
+    id: 36,
+    title: "Histopathology Tests",
+    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisquam, quos.",
+    url:"/service/36",
+    svg: ( <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      className="bi bi-capsule-pill" viewBox="0 0 16 16">
+      <path
+          d="M11.02 5.364a3 3 0 0 0-4.242-4.243L1.121 6.778a3 3 0 1 0 4.243 4.243l5.657-5.657Zm-6.413-.657 2.878-2.879a2 2 0 1 1 2.829 2.829L7.435 7.536zM12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8m-.5 1.042a3 3 0 0 0 0 5.917zm1 5.917a3 3 0 0 0 0-5.917z" />
+  </svg>),
+  },
+  {
+    id: 37,
+    title: "Urine Tests",
+    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisquam, quos.",
+    url:"/service/37",
+    svg: (<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      className="bi bi-capsule" viewBox="0 0 16 16">
+      <path
+          d="M1.828 8.9 8.9 1.827a4 4 0 1 1 5.657 5.657l-7.07 7.071A4 4 0 1 1 1.827 8.9Zm9.128.771 2.893-2.893a3 3 0 1 0-4.243-4.242L6.713 5.429z" />
+  </svg>),
+  },
+  {
+    id: 38,
+    title: "Blood Tests",
+    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisquam, quos.",
+    url:"/service/38",
+    svg: ( <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      className="bi bi-prescription2" viewBox="0 0 16 16">
+      <path d="M7 6h2v2h2v2H9v2H7v-2H5V8h2z" />
+      <path
+          d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v10.5a1.5 1.5 0 0 1-1.5 1.5h-7A1.5 1.5 0 0 1 3 14.5V4a1 1 0 0 1-1-1zm2 3v10.5a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5V4zM3 3h10V1H3z" />
+  </svg>),
+  },
+  {
+    id: 39,
+    title: "Fever Tests",
+    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisquam, quos.",
+    url:"/service/39",
+    svg:(<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      className="bi bi-clipboard2-pulse" viewBox="0 0 16 16">
+      <path
+          d="M9.5 0a.5.5 0 0 1 .5.5.5.5 0 0 0 .5.5.5.5 0 0 1 .5.5V2a.5.5 0 0 1-.5.5h-5A.5.5 0 0 1 5 2v-.5a.5.5 0 0 1 .5-.5.5.5 0 0 0 .5-.5.5.5 0 0 1 .5-.5z" />
+      <path
+          d="M3 2.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 0 0-1h-.5A1.5 1.5 0 0 0 2 2.5v12A1.5 1.5 0 0 0 3.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-12A1.5 1.5 0 0 0 12.5 1H12a.5.5 0 0 0 0 1h.5a.5.5 0 0 1 .5.5v12a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5z" />
+      <path
+          d="M9.979 5.356a.5.5 0 0 0-.968.04L7.92 10.49l-.94-3.135a.5.5 0 0 0-.926-.08L4.69 10H4.5a.5.5 0 0 0 0 1H5a.5.5 0 0 0 .447-.276l.936-1.873 1.138 3.793a.5.5 0 0 0 .968-.04L9.58 7.51l.94 3.135A.5.5 0 0 0 11 11h.5a.5.5 0 0 0 0-1h-.128z" />
+  </svg>),
+  },
+  {
+    id: 40,
+    title: "Allergy Tests",
+    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisquam, quos.",
+    url:"/service/40",
+    svg: ( <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+      className="bi bi-file-diff" viewBox="0 0 16 16">
+      <path
+          d="M8 4a.5.5 0 0 1 .5.5V6H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V7H6a.5.5 0 0 1 0-1h1.5V4.5A.5.5 0 0 1 8 4m-2.5 6.5A.5.5 0 0 1 6 10h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5" />
+      <path
+          d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1" />
+  </svg>),
+  },
+ 
 ];
 
 export const ContactOfficeDetails = [

@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./ServicesBtn.css";
-import { SrvicesCardsData } from "../../Data/Data";
-const ServicesBtn = () => {
+const ServicesBtn = ({id}) => {
+  const navigate= useNavigate()
   return (
     <div className="services-section-card-btn fw-medium ">
-      <button>
+      <button onClick={()=>navigate(`/service/${id}`)}>
         Read More{" "}
         <svg
           xmlns="http://www.w3.org/2000/svg"

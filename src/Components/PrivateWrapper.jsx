@@ -1,19 +1,20 @@
-import { Navigate, Outlet, useLocation, useParams } from "react-router-dom";
+import { Navigate, Outlet, useLocation, useOutletContext, useParams } from "react-router-dom";
 import Header from "./Includes/Header/Header";
 import TestimonialSec from "./Layouts/TestimonialSec/TestimonialSec";
 import FooterTop from "./Layouts/FooterTop/FooterTop";
 import FooterBtm from "./FooterBtm/FooterBtm";
-import secureLocalStorage from "react-secure-storage";
 
 const PrivateWrapper = () => {
   const location = useLocation();
-  const AppData = secureLocalStorage?.getItem("LoginData");
+  const AppData = localStorage?.getItem("LoginData");
+  const {encryptData , decryptData} = useOutletContext();
   const cardId= useParams()
   // console.log(cardId.id)
   if (!AppData) {
     return <Navigate to="/" />;
   }
-  console.log(location)
+
+  // console.log(location)
   const pages = [
     "/home",
     "/about",
@@ -34,7 +35,7 @@ const PrivateWrapper = () => {
   return (
     <>
       {allowed && <Header />}
-      <Outlet />
+      <Outlet context={{encryptData,decryptData}} />
       {allowed && <TestimonialSec />}
       {allowed && <FooterTop />}
       {allowed && <FooterBtm />}

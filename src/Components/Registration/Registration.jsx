@@ -16,13 +16,14 @@ import { useEffect, useState } from "react";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useFormik } from "formik";
 import validationSchema from "./YupSignup";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import secureLocalStorage from "react-secure-storage";
 
 const Registration = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [registrationData, setRegistrationData] = useState([]);
   const navigate = useNavigate();
+
   useEffect(() => {
     const storedData = secureLocalStorage?.getItem("registrationData");
     console.log(storedData)
@@ -32,8 +33,7 @@ const Registration = () => {
       secureLocalStorage?.setItem("registrationData", registrationData);
       console.log(registrationData);
     }
-    
-  }, [registrationData]);
+ }, [registrationData]);
   const signupFormik = useFormik({
     initialValues: {
       name: "",
@@ -75,12 +75,12 @@ const Registration = () => {
         }
         return;
       }
-      if(values.userType.toLowerCase() !== "admin" && values.userType.toLowerCase() !== "user"){
+      if(values?.username?.toLowerCase() !== "admin" && values?.userType?.toLowerCase() !== "user"){
         signupFormik?.setFieldError("userType", "Enter valid user type");
         return;
 
       }
-      else if((values.username.toLowerCase() !== "admin" && values.userType.toLowerCase() === "admin") || (values.userType.toLowerCase() === "admin" && values.username.toLowerCase() !== "admin")){
+      else if((values?.username?.toLowerCase() !== "admin" && values?.userType?.toLowerCase() === "admin") || (values.userType.toLowerCase() === "admin" && values.username.toLowerCase() !== "admin")){
         signupFormik?.setErrors(
          {
           userType: "Enter valid user type",

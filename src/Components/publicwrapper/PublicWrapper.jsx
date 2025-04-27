@@ -1,15 +1,15 @@
-import { Navigate, Outlet } from "react-router-dom";
-import secureLocalStorage from "react-secure-storage";
+import { Navigate, Outlet, useOutletContext } from "react-router-dom";
 
 const PublicWrapper = () => {
-  const storage = secureLocalStorage?.getItem("LoginData");
+  const storage = localStorage?.getItem("LoginData");
+  const {encryptData , decryptData} = useOutletContext()
   console.log("Public Wrapper Running..")
   if (storage) {
     return <Navigate to={"/home"} />;
   }
 // console.log(<Outlet />)
   return (
-      <Outlet />
+      <Outlet context={{encryptData,decryptData}} />
   );
 };
 
