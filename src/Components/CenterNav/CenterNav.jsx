@@ -2,21 +2,22 @@ import secureLocalStorage from "react-secure-storage";
 import Logo from "../Includes/Logo/Logo";
 import "./CenterNav.css";
 import { PersonOutline } from "@mui/icons-material";
-import { useOutletContext } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../Contexts/Auth";
 
 const CenterNav = () => {
-  const {decryptData} = useOutletContext();
-  const stringifyEncrypted_LoginData = localStorage?.getItem("LoginData");
-  const EncryptedLoginData= JSON.parse(stringifyEncrypted_LoginData);
-  const decryptedLoginData= decryptData(EncryptedLoginData)
-  const Logindata= JSON.parse(decryptedLoginData)
-  const registerData = secureLocalStorage?.getItem("registrationData");
-
-      let user = registerData?.find(
-        (obj) => obj?.username?.toLowerCase() === Logindata?.username?.toLowerCase()
-      );
+  const {State} = useContext(AuthContext);
+  // const stringifyEncrypted_LoginData = localStorage?.getItem("LoginData");
+  // const EncryptedLoginData= JSON.parse(stringifyEncrypted_LoginData);
+  // const decryptedLoginData= decryptData(EncryptedLoginData)
+  // const Logindata= JSON.parse(decryptedLoginData)
+  // const registerData = secureLocalStorage?.getItem("registrationData");
+  // const user= findRegisteredUser(Logindata)
+      // const user = registerData?.find(
+      //   (obj) => obj?.username?.toLowerCase() === Logindata?.username?.toLowerCase()
+      // );
     
-    const isAdmin = Logindata && Object?.values(Logindata)?.some(
+    const isAdmin = State?.LoginUserData && Object?.values(State?.LoginUserData)?.some(
       (value) => typeof(value) === "string" && value?.includes("admin")
     );
  
@@ -41,7 +42,7 @@ const CenterNav = () => {
             </svg>
             <div className="centerNav-left-text d-flex flex-column align-items-start">
               <span className="fw-medium">Call Now</span>
-              <span>{user?.phone}</span>
+              <span>{State?.RegisteredUserData?.phone}</span>
             </div>
           </div>
           <div className="centerNav-center">
@@ -75,8 +76,8 @@ const CenterNav = () => {
               <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
             </svg> */}
             <div className="centerNav-right-text d-flex flex-column align-items-start">
-             { Logindata && <span className="fw-medium">{user?.username}</span>}
-             {Logindata && <span>{user?.email}</span> }
+             { State?.LoginUserData && <span className="fw-medium">{State.RegisteredUserData?.username}</span>}
+             {State?.LoginUserData && <span>{State.RegisteredUserData?.email}</span> }
             </div>
           </div>
         </div>

@@ -12,17 +12,17 @@ import {
   TextField,
 } from "@mui/material";
 import "./Profile.css";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useFormik } from "formik";
 import { toast, ToastContainer } from "react-toastify";
 
 import ProfileYup from "./ProfileYup";
 import secureLocalStorage from "react-secure-storage";
-import { useOutletContext } from "react-router-dom";
+import { AuthContext } from "../../Contexts/Auth";
 
 const Profile = () => {
-  const {encryptData,decryptData} = useOutletContext()
+  const {encryptData,decryptData,dispatch,State} = useContext(AuthContext)
   const [showPassword, setShowPassword] = useState(false);
   const storedData = secureLocalStorage?.getItem("registrationData");
   console.log(storedData)
@@ -32,10 +32,7 @@ const Profile = () => {
   const decryptedLoginData= decryptData(EncryptedLoginData)
   const loginData= JSON.parse(decryptedLoginData)
   console.log(loginData)
-  const profile = storedData?.find(
-    (data) =>
-      data?.username?.toLowerCase() === loginData?.username?.toLowerCase()
-  );
+  const profile = State?.RegisteredUserData
   const signupFormik = useFormik({
     initialValues: {
       name: "",
@@ -82,23 +79,22 @@ const Profile = () => {
       const EditLogin= {
         name:values.name,
         username: values.username,
-        email: values.email,
         role: values.username === "admin" ? "admin" : "user",
         user_id: values.username === "admin" ? 1 : 0 , 
       }
       const stringify_EditLogin= JSON.stringify(EditLogin)
       const encryptedLoginData= encryptData(stringify_EditLogin)
-      console.log(encryptedLoginData)
+      // console.log(encryptedLoginData)
       const StringifyEncrypted_LoginData= JSON.stringify(encryptedLoginData)
       localStorage?.setItem("LoginData",StringifyEncrypted_LoginData)
       const updatedProfile = { ...profile, ...values };
       const updatedData = storedData?.map((user) =>
         user?.username === profile?.username ? updatedProfile : user
-      );
-      // console.log(updatedData);
-      // console.log(updatedProfile);
-      secureLocalStorage?.setItem("registrationData", updatedData);
-      window.location.reload()
+    );
+    // console.log(updatedData);
+    // console.log(updatedProfile);
+    secureLocalStorage?.setItem("registrationData", updatedData);
+    dispatch({type:"EditProfile"})
       toast.success("Your account is eddited.", {
         position: "top-right",
       });
@@ -115,8 +111,8 @@ const Profile = () => {
     }
     },[profile])
   const nameErr = signupFormik?.touched?.name && signupFormik?.errors?.name;
-  const usernameErr =
-    signupFormik?.touched?.username && signupFormik?.errors?.username;
+  // const usernameErr =
+  //   signupFormik?.touched?.username && signupFormik?.errors?.username;
   const emailErr = signupFormik?.touched?.email && signupFormik?.errors?.email;
   const phoneErr = signupFormik?.touched?.phone && signupFormik?.errors?.phone;
   const passwordErr =
@@ -140,16 +136,7 @@ const Profile = () => {
               error={nameErr}
               helperText={nameErr && signupFormik?.errors?.name}
             />
-            <TextField
-              className="col"
-              label="Username"
-              margin="dense"
-              variant="outlined"
-              disabled={profile?.username?.toLowerCase() === "admin"}
-              {...signupFormik?.getFieldProps("username")}
-              error={usernameErr}
-              helperText={usernameErr && signupFormik?.errors?.username}
-            />
+           
             <TextField
               className="col"
               label="Email"

@@ -1,20 +1,24 @@
 import "./MenuNav.css";
 import { NavLinks } from "../Data/Data";
-import { NavLink, useOutletContext } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import SocialIcons from "../Includes/SocialIcons/SocialIcons";
 import ThemeButton from "../Includes/ThemeButton/ThemeButton";
 import secureLocalStorage from "react-secure-storage";
+import { useContext } from "react";
+import { AuthContext } from "../../Contexts/Auth";
 
 const MenuNav = () => {
-  const {decryptData} = useOutletContext()
+  const {decryptData} = useContext(AuthContext)
   const stringifyEncrypted_LoginData = localStorage?.getItem("LoginData");
   const EncryptedLoginData= JSON.parse(stringifyEncrypted_LoginData);
   const decryptedLoginData= decryptData(EncryptedLoginData)
   const Logindata= JSON.parse(decryptedLoginData)
   const registerData = secureLocalStorage.getItem("registrationData");
-  let user = registerData?.find(
-    (obj) => obj?.username.toLowerCase() === Logindata?.username.toLowerCase()
+  console.log(registerData)
+   let user = registerData?.find(
+    (obj) => obj?.username?.toLowerCase() === Logindata?.username?.toLowerCase()
   );
+  console.log(user)
   const userType = user?.userType.toLowerCase();
   // console.log(userType);
   return (

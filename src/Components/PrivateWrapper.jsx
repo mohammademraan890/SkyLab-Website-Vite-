@@ -1,4 +1,4 @@
-import { Navigate, Outlet, useLocation, useOutletContext, useParams } from "react-router-dom";
+import { Navigate, Outlet, useLocation, useParams } from "react-router-dom";
 import Header from "./Includes/Header/Header";
 import TestimonialSec from "./Layouts/TestimonialSec/TestimonialSec";
 import FooterTop from "./Layouts/FooterTop/FooterTop";
@@ -7,7 +7,6 @@ import FooterBtm from "./FooterBtm/FooterBtm";
 const PrivateWrapper = () => {
   const location = useLocation();
   const AppData = localStorage?.getItem("LoginData");
-  const {encryptData , decryptData} = useOutletContext();
   const cardId= useParams()
   // console.log(cardId.id)
   if (!AppData) {
@@ -35,7 +34,7 @@ const PrivateWrapper = () => {
   return (
     <>
       {allowed && <Header />}
-      <Outlet context={{encryptData,decryptData}} />
+      <Outlet />
       {allowed && <TestimonialSec />}
       {allowed && <FooterTop />}
       {allowed && <FooterBtm />}

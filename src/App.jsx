@@ -5,6 +5,7 @@ import Loader from "./Components/loader/Loader";
 import { router } from "./RouterConfig";
 import AppWrapper from "./Components/AppWrapper/AppWrapper";
 import { Suspense } from "react";
+import { AuthProvider } from "./Contexts/Auth";
 
 // export const ErrorUI = (props) => {
 //   console.log("Error UI Props:", props);
@@ -41,11 +42,13 @@ import { Suspense } from "react";
 function App() {
   
   return (
+    <AuthProvider>
     <AppWrapper>
       <Suspense fallback={<Loader></Loader>}>
         <RouterProvider router={router} />
       </Suspense>
     </AppWrapper>
+    </AuthProvider>
   );
 }
 

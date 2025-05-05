@@ -10,8 +10,6 @@ const MainWrapper = () => {
   const location = useLocation();
   const loginData = secureLocalStorage.getItem("LoginData");
   const navigate = useNavigate();
-  const secret = "my_super_secret_key_1234567890!!";
-  const secretKey = decodeUTF8(secret);
 
   useEffect(() => {
     function handleStorage(e) {
@@ -40,34 +38,34 @@ const MainWrapper = () => {
       return <Navigate to={"/home"} />;
     }
   }
-   function encryptData(plainText) {
-    const nonce = nacl.randomBytes(24); // 24-byte random nonce
-    const messageUint8 = decodeUTF8(plainText);
-    const encrypted = nacl.secretbox(messageUint8, nonce, secretKey);
+  //  function encryptData(plainText) {
+  //   const nonce = nacl.randomBytes(24); // 24-byte random nonce
+  //   const messageUint8 = decodeUTF8(plainText);
+  //   const encrypted = nacl.secretbox(messageUint8, nonce, secretKey);
   
-    return {
-      nonce: encodeBase64(nonce),
-      ciphertext: encodeBase64(encrypted),
-    };
-  }
-   function decryptData({ ciphertext, nonce }) {
-    const nonceBytes = decodeBase64(nonce);
-    const encryptedBytes = decodeBase64(ciphertext);
-    const decrypted = nacl.secretbox.open(encryptedBytes, nonceBytes, secretKey);
+  //   return {
+  //     nonce: encodeBase64(nonce),
+  //     ciphertext: encodeBase64(encrypted),
+  //   };
+  // }
+  //  function decryptData({ ciphertext, nonce }) {
+  //   const nonceBytes = decodeBase64(nonce);
+  //   const encryptedBytes = decodeBase64(ciphertext);
+  //   const decrypted = nacl.secretbox.open(encryptedBytes, nonceBytes, secretKey);
   
-    if (!decrypted) {
-      throw new Error("Decryption failed. Possibly wrong key or data corrupted.");
-    }
+  //   if (!decrypted) {
+  //     throw new Error("Decryption failed. Possibly wrong key or data corrupted.");
+  //   }
 
-    return encodeUTF8(decrypted);
-  }
+  //   return encodeUTF8(decrypted);
+  // }
   
   // const registrationData = localStorage?.getItem("registrationData")
   // console.log(registrationData || "")
   return (
     <>
       <HelmetConfig />
-      <Outlet context={{encryptData,decryptData}} />
+      <Outlet />
     </>
   );
 };

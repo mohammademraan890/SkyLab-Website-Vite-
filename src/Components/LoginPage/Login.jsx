@@ -8,19 +8,20 @@ import {
   TextField,
 } from "@mui/material";
 import "./Login.css";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AccountCircle, Visibility, VisibilityOff } from "@mui/icons-material";
 import { useFormik } from "formik";
 import validationSchema from "./YUP";
-import { Link, useLocation, useNavigate, useOutletContext } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import secureLocalStorage from "react-secure-storage";
 import { toast, ToastContainer } from "react-toastify";
+import { AuthContext } from "../../Contexts/Auth";
 
 
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
- const {encryptData, decryptData} = useOutletContext();
+ const {encryptData,dispatch} = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
   
@@ -44,14 +45,12 @@ const Login = () => {
           name: username === "admin" ? "admin" : "user",
           role: username === "admin" ? "admin" : "user",
           user_id: username === "admin" ? 1 : 0,
-          email : storedData.email, 
         };
-        const stringFormat_LoginData= JSON.stringify(LoginData)
-        const encryptedLoginData= encryptData(stringFormat_LoginData)
+        const Stringify_loginData= JSON.stringify(LoginData)
+        const encryptedLoginData= encryptData(Stringify_loginData)
         const stringifyEncrypted_LoginData= JSON.stringify(encryptedLoginData)
-        console.log(stringifyEncrypted_LoginData)
         localStorage?.setItem("LoginData",stringifyEncrypted_LoginData)
-      //  secureLocalStorage.setItem("LoginData", LoginData);
+        dispatch({type:"LoginUser",LoginData:LoginData})
         loginFormik.handleReset();
         navigate("/home", { state: { showWelcomeToast: true } });
       } else {

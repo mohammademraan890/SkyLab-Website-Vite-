@@ -10,8 +10,6 @@ import secureLocalStorage from "react-secure-storage";
 
 const HomePage = () => {
   const location = useLocation();
-  const LoginData = secureLocalStorage?.getItem("LoginData");
-  console.log(LoginData);
   const registrationData = secureLocalStorage?.getItem("registrationData");
 
   const isAdmin = registrationData?.some((value) =>
