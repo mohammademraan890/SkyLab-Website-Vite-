@@ -3,7 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 import MainWrapper from "./Components/mainWrapper/MainWrapper";
 import DateFormating from "./Components/DateFNS/DateFormating";
 import RegisteredUsers from "./Components/RegisteredUsers/RegisteredUsers";
-import LifeCycle from "./Components/componentLifeCycle/lifeCycle";
+// import LifeCycle from "./Components/componentLifeCycle/lifeCycle";
 import ArrayMethods from "./Components/ArrayIterateMethods/ArrayMethods";
 const Login = lazy(() => import("./Components/LoginPage/Login"));
 const Registration = lazy(() =>
@@ -58,7 +58,7 @@ export const router = createBrowserRouter([
           { path: "profile", element: <Profile /> },
           { path: "/date-fns", element: <DateFormating /> },
           { path: "/registered-users", element: <RegisteredUsers /> },
-          { path: "/LifeCycle", element: <LifeCycle /> },
+          // { path: "/LifeCycle", element: <LifeCycle /> },
           { path: "/arrayMethods", element: <ArrayMethods /> },
           { path: "*", element: <NotFound /> },
         ],
