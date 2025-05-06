@@ -22,16 +22,10 @@ import secureLocalStorage from "react-secure-storage";
 import { AuthContext } from "../../Contexts/Auth";
 
 const Profile = () => {
-  const {encryptData,decryptData,dispatch,State} = useContext(AuthContext)
+  const {encryptData,dispatch,State} = useContext(AuthContext)
   const [showPassword, setShowPassword] = useState(false);
   const storedData = secureLocalStorage?.getItem("registrationData");
-  console.log(storedData)
-  
-  const stringifyEncrypted_LoginData = localStorage?.getItem("LoginData");
-  const EncryptedLoginData= JSON?.parse(stringifyEncrypted_LoginData);
-  const decryptedLoginData= decryptData(EncryptedLoginData)
-  const loginData= JSON.parse(decryptedLoginData)
-  console.log(loginData)
+
   const profile = State?.RegisteredUserData
   const signupFormik = useFormik({
     initialValues: {
@@ -82,11 +76,9 @@ const Profile = () => {
         role: values.username === "admin" ? "admin" : "user",
         user_id: values.username === "admin" ? 1 : 0 , 
       }
-      const stringify_EditLogin= JSON.stringify(EditLogin)
-      const encryptedLoginData= encryptData(stringify_EditLogin)
+      const encryptedLoginData= encryptData(EditLogin)
       // console.log(encryptedLoginData)
-      const StringifyEncrypted_LoginData= JSON.stringify(encryptedLoginData)
-      localStorage?.setItem("LoginData",StringifyEncrypted_LoginData)
+      localStorage?.setItem("LoginData",encryptedLoginData)
       const updatedProfile = { ...profile, ...values };
       const updatedData = storedData?.map((user) =>
         user?.username === profile?.username ? updatedProfile : user
@@ -107,7 +99,6 @@ const Profile = () => {
     // console.log(profile);
     if(profile){
       signupFormik?.setValues(profile)
-      console.log("values set")
     }
     },[profile])
   const nameErr = signupFormik?.touched?.name && signupFormik?.errors?.name;

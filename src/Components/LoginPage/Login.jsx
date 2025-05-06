@@ -46,10 +46,8 @@ const Login = () => {
           role: username === "admin" ? "admin" : "user",
           user_id: username === "admin" ? 1 : 0,
         };
-        const Stringify_loginData= JSON.stringify(LoginData)
-        const encryptedLoginData= encryptData(Stringify_loginData)
-        const stringifyEncrypted_LoginData= JSON.stringify(encryptedLoginData)
-        localStorage?.setItem("LoginData",stringifyEncrypted_LoginData)
+        const encryptedLoginData= encryptData(LoginData)
+        localStorage?.setItem("LoginData",encryptedLoginData)
         dispatch({type:"LoginUser",LoginData:LoginData})
         loginFormik.handleReset();
         navigate("/home", { state: { showWelcomeToast: true } });

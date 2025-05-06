@@ -3,24 +3,11 @@ import { NavLinks } from "../Data/Data";
 import { NavLink } from "react-router-dom";
 import SocialIcons from "../Includes/SocialIcons/SocialIcons";
 import ThemeButton from "../Includes/ThemeButton/ThemeButton";
-import secureLocalStorage from "react-secure-storage";
 import { useContext } from "react";
 import { AuthContext } from "../../Contexts/Auth";
 
 const MenuNav = () => {
-  const {decryptData} = useContext(AuthContext)
-  const stringifyEncrypted_LoginData = localStorage?.getItem("LoginData");
-  const EncryptedLoginData= JSON.parse(stringifyEncrypted_LoginData);
-  const decryptedLoginData= decryptData(EncryptedLoginData)
-  const Logindata= JSON.parse(decryptedLoginData)
-  const registerData = secureLocalStorage.getItem("registrationData");
-  console.log(registerData)
-   let user = registerData?.find(
-    (obj) => obj?.username?.toLowerCase() === Logindata?.username?.toLowerCase()
-  );
-  console.log(user)
-  const userType = user?.userType.toLowerCase();
-  // console.log(userType);
+  const {State} = useContext(AuthContext)
   return (
     <div className={`menuNav d-sm-block d-none `}>
       <div className="custom-container menuNav-container d-flex justify-content-between align-items-center">
@@ -61,7 +48,7 @@ const MenuNav = () => {
                         );
                       }
                       // For "Registered Users" link, only show if userType is admin
-                      else if (userType === "admin") {
+                      else if (State?.RegisteredUserData?.username === "admin") {
                         return (
                           <li key={subLink?.id}>
                             <NavLink

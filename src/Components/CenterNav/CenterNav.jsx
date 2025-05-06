@@ -1,4 +1,3 @@
-import secureLocalStorage from "react-secure-storage";
 import Logo from "../Includes/Logo/Logo";
 import "./CenterNav.css";
 import { PersonOutline } from "@mui/icons-material";
@@ -17,9 +16,9 @@ const CenterNav = () => {
       //   (obj) => obj?.username?.toLowerCase() === Logindata?.username?.toLowerCase()
       // );
     
-    const isAdmin = State?.LoginUserData && Object?.values(State?.LoginUserData)?.some(
-      (value) => typeof(value) === "string" && value?.includes("admin")
-    );
+    // const isAdmin = State?.LoginUserData && Object?.values(State?.LoginUserData)?.some(
+    //   (value) => typeof(value) === "string" && value?.includes("admin")
+    // );
  
   // console.log(Logindata);
   // const {name,username,email,role} = Logindata
@@ -55,7 +54,7 @@ const CenterNav = () => {
             />
           </div>
           <div className="centerNav-right d-flex align-items-center">
-            {isAdmin ? (
+            {State.RegisteredUserData.username=== "admin" ? (
               <img
                 style={{ marginRight: "10px" }}
                 src="Assests\assets\user.png"
@@ -76,8 +75,8 @@ const CenterNav = () => {
               <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
             </svg> */}
             <div className="centerNav-right-text d-flex flex-column align-items-start">
-             { State?.LoginUserData && <span className="fw-medium">{State.RegisteredUserData?.username}</span>}
-             {State?.LoginUserData && <span>{State.RegisteredUserData?.email}</span> }
+              <span className="fw-medium">{State?.RegisteredUserData?.username}</span>
+              <span>{State?.RegisteredUserData?.email}</span> 
             </div>
           </div>
         </div>

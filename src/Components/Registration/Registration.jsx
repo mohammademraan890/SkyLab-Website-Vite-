@@ -26,13 +26,12 @@ const Registration = () => {
 
   useEffect(() => {
     const storedData = secureLocalStorage?.getItem("registrationData");
-    console.log(storedData)
-    if (storedData && registrationData?.length === 0) {
+    if (storedData && !registrationData?.length) {
       setRegistrationData(storedData);
     } else {
       secureLocalStorage?.setItem("registrationData", registrationData);
-      console.log(registrationData);
     }
+    console.log(registrationData)
  }, [registrationData]);
   const signupFormik = useFormik({
     initialValues: {
