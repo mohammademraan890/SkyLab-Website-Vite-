@@ -1,6 +1,5 @@
 import { Navigate, Outlet, useLocation, useNavigate } from "react-router-dom";
 // import Loader from "../loader/Loader";
-import HelmetConfig from "../Includes/Helmet/HelmetConfig";
 import secureLocalStorage from "react-secure-storage";
 import { useEffect } from "react";
 import { decodeBase64, decodeUTF8, encodeBase64, encodeUTF8 } from "tweetnacl-util";
@@ -64,7 +63,6 @@ const MainWrapper = () => {
   // console.log(registrationData || "")
   return (
     <>
-      <HelmetConfig />
       <Outlet />
     </>
   );
