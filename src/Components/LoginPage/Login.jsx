@@ -21,7 +21,7 @@ import { AuthContext } from "../../Contexts/Auth";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
- const {encryptData,dispatch} = useContext(AuthContext);
+ const {dispatch} = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
   
@@ -32,23 +32,16 @@ const Login = () => {
     },
     validationSchema,
     onSubmit: (values) => {
-      const { username, password } = values;
-      const signupData = secureLocalStorage?.getItem("registrationData");
+      const { username } = values;
+      const signupData = secureLocalStorage?.getItem("registerationData");
 
-      const storedData = signupData?.find(
-        (obj) => obj?.username?.toLowerCase() === username?.toLowerCase() && obj?.password === password
+      const LoginData = signupData?.find(
+        (obj) => obj?.username?.toLowerCase() === username?.toLowerCase()
       );
-      // console.log(storedData)
-      if (storedData) {
-       const LoginData = {
-          username: username,
-          name: username === "admin" ? "admin" : "user",
-          role: username === "admin" ? "admin" : "user",
-          user_id: username === "admin" ? 1 : 0,
-        };
-        const encryptedLoginData= encryptData(LoginData)
-        localStorage?.setItem("LoginData",encryptedLoginData)
-        dispatch({type:"LoginUser",LoginData:LoginData})
+      if (LoginData) {
+        const LoginDataIndex = signupData?.findIndex((item)=>  item?.username?.toLowerCase() === username?.toLowerCase() )
+        const LoginDataWithIndex = {...LoginData,LoginDataIndex}
+        dispatch({type:"LoginUser" , LoginData:LoginDataWithIndex})
         loginFormik.handleReset();
         navigate("/home", { state: { showWelcomeToast: true } });
       } else {
@@ -71,6 +64,9 @@ const Login = () => {
     }
     window.history.replaceState({}, "");
   },[location?.state])
+  useEffect(()=>{
+    document.title = "Login || LabSky"
+  },[])
   return (
     <div className="loginPage">
       <ToastContainer />

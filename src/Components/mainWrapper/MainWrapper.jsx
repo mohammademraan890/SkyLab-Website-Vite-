@@ -4,7 +4,7 @@ import { useContext, useEffect } from "react";
 import { AuthContext } from "../../Contexts/Auth";
 
 const MainWrapper = () => {
-  const {dispatch, State} = useContext(AuthContext)
+  const {State} = useContext(AuthContext)
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -20,24 +20,15 @@ const MainWrapper = () => {
         } else if (e.newValue) {
           document.title="Home || LabSky"
           navigate("/home");
-          console.log("re-render2 happen")
-
         }
       }
-      else{
-        dispatch({type: "RegistratoinDataEdited"})
-      }
-      // console.log("LocalStorage Edited")
-      // console.log(e)
     }
     window.addEventListener("storage", handleStorage);
-    return () => {
-      window.removeEventListener("storage", handleStorage);
-    };
+   
   }, []);
 
   if (location.pathname === "/registered-users") {
-    if (State?.RegisteredUserData?.username?.toLowerCase() !== "admin") {
+    if (State?.LoginUserData?.username?.toLowerCase() !== "admin") {
       return <Navigate to={"/home"} />;
     }
   }

@@ -1,9 +1,11 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./TopNav.css";
+import { useContext } from "react";
+import { AuthContext } from "../../Contexts/Auth";
+import { LogoutOutlined } from "@mui/icons-material";
 // import { useEffect } from "react";
 export const TopNav = () => {
-  const navigate = useNavigate();
-
+  const {dispatch} = useContext(AuthContext)
   return (
     <div className="topnav">
       <div className=" custom-container topnav-container d-flex justify-content-between align-items-center">
@@ -56,15 +58,14 @@ export const TopNav = () => {
             </li>
           </ul>
         </div>
-        <button
-          className="btn btn-primary"
+        <Link
+        to={"/"}
           onClick={() => {
-            localStorage.removeItem("LoginData");
-            navigate("/");
+            dispatch({type: "Logout"})
           }}
         >
-          Logout
-        </button>
+         Logout <LogoutOutlined/>
+        </Link>
         
       </div>
     </div>

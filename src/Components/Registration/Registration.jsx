@@ -6,39 +6,67 @@ import {
   IconButton,
   InputAdornment,
   InputLabel,
+  MenuItem,
   OutlinedInput,
   Radio,
   RadioGroup,
+  Select,
   TextField,
 } from "@mui/material";
 import "./Registration.css";
-import { useEffect, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useFormik } from "formik";
 import validationSchema from "./YupSignup";
-import { Link, useNavigate} from "react-router-dom";
-import secureLocalStorage from "react-secure-storage";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Contexts/Auth";
+import { useEffect } from "react";
+import IMask from "imask";
 
 const Registration = () => {
+  const { State, dispatch } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
-  const [registrationData, setRegistrationData] = useState([]);
   const navigate = useNavigate();
+  const registeredUsersData = State?.RegisterationData;
+  const CNICRef = useRef(null);
+  const phoneRef = useRef(null);
 
   useEffect(() => {
-    const storedData = secureLocalStorage?.getItem("registrationData");
-    if (storedData && !registrationData?.length) {
-      setRegistrationData(storedData);
-    } else {
-      secureLocalStorage?.setItem("registrationData", registrationData);
+    if (CNICRef.current) {
+  const mask = IMask(CNICRef.current, {
+    mask: [
+      {
+        mask: '*****-*******-*',
+        definitions: {
+          '*':/[A-Za-z0-9@#$%-]/
+        },
+      },
+    ],
+    lazy: false, 
+  });
+
+  mask.on('accept', () => {
+    signupFormik.setFieldValue('CNIC', mask.value);
+  });
+}
+
+
+
+    if (phoneRef?.current) {
+      const mask = IMask(phoneRef.current, { mask: "+{92} 000 0000000" });
+      mask.on("accept", () => {
+        signupFormik?.setFieldValue("phone", mask.value);
+      });
     }
-    console.log(registrationData)
- }, [registrationData]);
+  }, []);
+
   const signupFormik = useFormik({
     initialValues: {
       name: "",
       username: "",
-      email: "",
       userType: "",
+      email: "",
+      CNIC: "",
       password: "",
       confirmPassword: "",
       phone: "",
@@ -49,17 +77,19 @@ const Registration = () => {
 
     validationSchema,
     onSubmit: (values) => {
-      // console.log(values);
-      const signupData = secureLocalStorage?.getItem("registrationData");
+      console.log(values);
 
-      const isEmailExist = signupData?.find(
+      const isEmailExist = registeredUsersData?.find(
         (obj) => obj?.email === values?.email
       );
-      const isUsernameExist = signupData?.find(
+      const isUsernameExist = registeredUsersData?.find(
+        (obj) => obj.username === values.username
+      );
+      const isCNICExist = registeredUsersData?.find(
         (obj) => obj.username === values.username
       );
 
-      if (isEmailExist || isUsernameExist) {
+      if (isEmailExist || isUsernameExist || isCNICExist) {
         if (isEmailExist) {
           signupFormik?.setFieldError(
             "email",
@@ -72,26 +102,26 @@ const Registration = () => {
             "Username is already exists. Please use another one."
           );
         }
+
         return;
       }
-      if(values?.username?.toLowerCase() !== "admin" && values?.userType?.toLowerCase() !== "user"){
-        signupFormik?.setFieldError("userType", "Enter valid user type");
+
+      if (
+        (values?.username?.toLowerCase() !== "admin" &&
+          values?.userType === "admin") ||
+        (values?.userType === "admin" &&
+          values?.username?.toLowerCase() !== "admin") ||
+        (values?.username?.toLowerCase() === "admin" &&
+          values?.userType !== "admin")
+      ) {
+        signupFormik?.setErrors({
+          userType: "Select valid user type",
+          username: "Enter valid username",
+        });
         return;
-
       }
-      else if((values?.username?.toLowerCase() !== "admin" && values?.userType?.toLowerCase() === "admin") || (values.userType.toLowerCase() === "admin" && values.username.toLowerCase() !== "admin")){
-        signupFormik?.setErrors(
-         {
-          userType: "Enter valid user type",
-          username: "Enter valid username"
-         }
-        );
-        return;
-
-      }
-      setRegistrationData([...registrationData, values]);
-      console.log(registrationData);
-
+      // console.log(registerationData);
+      dispatch({ type: "userRegistered", RegisterationData: values });
       navigate("/");
       signupFormik?.handleReset();
     },
@@ -100,7 +130,9 @@ const Registration = () => {
   const usernameErr =
     signupFormik?.touched?.username && signupFormik?.errors?.username;
   const emailErr = signupFormik?.touched?.email && signupFormik?.errors?.email;
-  const userTypeErr = signupFormik?.touched?.userType && signupFormik?.errors?.userType;
+  const CNICErr = signupFormik?.touched?.CNIC && signupFormik?.errors?.CNIC;
+  const userTypeErr =
+    signupFormik?.touched?.userType && signupFormik?.errors?.userType;
   const phoneErr = signupFormik?.touched?.phone && signupFormik?.errors?.phone;
   const passwordErr =
     signupFormik?.touched?.password && signupFormik?.errors?.password;
@@ -134,6 +166,29 @@ const Registration = () => {
               error={usernameErr}
               helperText={usernameErr && signupFormik?.errors?.username}
             />
+            <FormControl
+              className="col"
+              margin="dense"
+              error={userTypeErr}
+              fullWidth
+            >
+              <InputLabel id="demo-simple-select-label">User Type</InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                helperText={userTypeErr && signupFormik?.errors?.userType}
+                id="demo-simple-select"
+                {...signupFormik?.getFieldProps("userType")}
+                label="User Type"
+              >
+                <MenuItem value={"user"}>user</MenuItem>
+                <MenuItem value={"admin"}>admin</MenuItem>
+              </Select>
+              <FormHelperText>
+                {userTypeErr && signupFormik?.errors?.userType}
+              </FormHelperText>
+            </FormControl>
+          </div>
+          <div className="row gap-2">
             <TextField
               className="col"
               label="Email"
@@ -143,6 +198,18 @@ const Registration = () => {
               {...signupFormik?.getFieldProps("email")}
               error={emailErr}
               helperText={emailErr && signupFormik?.errors?.email}
+            />
+
+            <TextField
+              name="CNIC"
+              inputRef={CNICRef}
+              className="col"
+              label="CNIC"
+              margin="dense"
+              variant="outlined"
+              placeholder="XXXXX-XXXXXXX-X"
+              error={CNICErr}
+              helperText={CNICErr && signupFormik.errors.CNIC}
             />
           </div>
           <div className="row gap-2">
@@ -222,27 +289,18 @@ const Registration = () => {
                 {confirmPasswordErr && signupFormik?.errors?.confirmPassword}
               </FormHelperText>
             </FormControl>
-            <TextField
-              className="col"
-              label="User Type"
-              type="text"
-              margin="dense"
-              variant="outlined"
-              {...signupFormik?.getFieldProps("userType")}
-              error={userTypeErr}
-              helperText={userTypeErr && signupFormik?.errors?.userType}
-            />
           </div>
           <div className="formRow row gap-2">
             <TextField
-              className="col"
+              name="phone"
+              inputRef={phoneRef}
               label="Phone Number"
-              type="number"
               margin="dense"
+              className="col"
               variant="outlined"
-              {...signupFormik?.getFieldProps("phone")}
+              placeholder="+92 XXX XXXXXXX"
               error={phoneErr}
-              helperText={phoneErr && signupFormik?.errors?.phone}
+              helperText={phoneErr && signupFormik.errors.phone}
             />
             <TextField
               className="col"
@@ -258,7 +316,7 @@ const Registration = () => {
           </div>
           <TextField
             className="col"
-           label="Enter Address"
+            label="Enter Address"
             fullWidth
             type="text"
             margin="dense"

@@ -9,11 +9,15 @@ import { useEffect } from "react";
 
 const HomePage = () => {
   const location = useLocation();
-
+  useEffect(()=>{
+    document.title="Home || LabSky"
+  },[])
   useEffect(() => {
     if (location?.state?.showWelcomeToast) {
       toast?.success("You LoggedIn Successfully.", {
         position: "top-right",
+        autoClose: 1000,        
+        hideProgressBar: true
       });
     }
     window.history.replaceState({}, "");

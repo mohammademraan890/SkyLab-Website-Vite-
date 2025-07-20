@@ -1,4 +1,4 @@
-import { createContext, useReducer } from "react";
+import { createContext, useEffect, useReducer } from "react";
 import secureLocalStorage from "react-secure-storage";
 import nacl from "tweetnacl";
 import {
@@ -22,65 +22,115 @@ function encryptData(plainText) {
   return StringifyEncryptedData;
 }
 function decryptData(encryptedData) {
-  const { nonce, ciphertext } = JSON.parse(encryptedData);
-  const nonceBytes = decodeBase64(nonce);
-  const encryptedBytes = decodeBase64(ciphertext);
-  const decrypted = nacl.secretbox.open(encryptedBytes, nonceBytes, secretKey);
-  if (!decrypted) {
-    throw new Error("Decryption failed. Possibly wrong key or data corrupted.");
+  if (encryptedData) {
+    const { nonce, ciphertext } = JSON.parse(encryptedData);
+    const nonceBytes = decodeBase64(nonce);
+    const encryptedBytes = decodeBase64(ciphertext);
+    const decrypted = nacl.secretbox.open(
+      encryptedBytes,
+      nonceBytes,
+      secretKey
+    );
+    // if (!decrypted) {
+    //   throw new Error(
+    //     "Decryption failed. Possibly wrong key or data corrupted."
+    //   );
+    // }
+    const stringifyDecryptedData =decrypted && encodeUTF8(decrypted);
+    const decryptedData = JSON.parse(stringifyDecryptedData);
+    return decryptedData;
   }
-  const stringifyDecryptedData = encodeUTF8(decrypted);
-  const decryptedData = JSON.parse(stringifyDecryptedData);
-  return decryptedData;
 }
+
 export const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
- 
-
-  const findRegisteredUser = () => {
-    const stringifyEncrypted_LoginData = localStorage?.getItem("LoginData");
-    if (!stringifyEncrypted_LoginData) {
-      return {};
-    } else {
-      const Logindata = decryptData(stringifyEncrypted_LoginData);
-      const registerationData = secureLocalStorage?.getItem("registrationData");
-      const RegisteredUserData = registerationData?.find(
-        (obj) =>
-          obj?.username?.toLowerCase() === Logindata?.username?.toLowerCase()
-      );
-      return RegisteredUserData;
-    }
-  };
-
+  // const findRegisteredUser = () => {
+  //   const stringifyEncrypted_LoginData = localStorage?.getItem("LoginData");
+  //   if (!stringifyEncrypted_LoginData) {
+  //     return {};
+  //   } else {
+  //     const Logindata = decryptData(stringifyEncrypted_LoginData);
+  //     const registerationData = secureLocalStorage?.getItem("registrationData");
+  //     const RegisteredUserData = registerationData?.find(
+  //       (obj) =>
+  //         obj?.username?.toLowerCase() === Logindata?.username?.toLowerCase()
+  //     );
+  //     return RegisteredUserData;
+  //   }
+  // };
+  let initialLogin = decryptData(localStorage?.getItem("LoginData")) || {};
+  const initialRegisteredUsers =
+    secureLocalStorage?.getItem("registerationData") || [];
   const initialVal = {
-    RegisteredUserData: findRegisteredUser(),
+    LoginUserData: initialLogin,
+    RegisterationData: initialRegisteredUsers,
   };
   const handleAuth = (State, action) => {
     if (action?.type === "LoginUser") {
-      const LoginedUser = action?.LoginData;
-      const RegisteredUserData = findRegisteredUser(LoginedUser);
-      return { ...State,RegisteredUserData };
-    } else if (
-      action.type === "EditProfile" ||
-      action.type === "RegistratoinDataEdited"
-    ) {
-      const RegisteredUser = findRegisteredUser();
-      if (action.type === "RegistratoinDataEdited"){
-        console.log("data changed...")
-      }
+      const encryptedLoginData = encryptData(action?.LoginData);
+      localStorage?.setItem("LoginData", encryptedLoginData);
       return {
         ...State,
-        RegisteredUserData: RegisteredUser,
+        LoginUserData: action.LoginData,
       };
-      
+    } else if (action.type === "EditProfile") {
+      const encryptedUpdatedLoginUser = encryptData(action.updatedData);
+      localStorage?.setItem("LoginData", encryptedUpdatedLoginUser);
+
+      initialRegisteredUsers[initialLogin.LoginDataIndex] = action?.updatedData;
+
+      secureLocalStorage?.setItem("registerationData", initialRegisteredUsers);
+
+      return {
+        ...State,
+        RegisterationData: initialRegisteredUsers,
+        LoginUserData: action?.updatedData,
+      };
+    } else if (action.type === "userRegistered") {
+      const registerdUsers = action.RegisterationData;
+      const RegisteredUsersData = [...State.RegisterationData, registerdUsers];
+      secureLocalStorage.setItem("registerationData", RegisteredUsersData);
+      return { ...State, RegisterationData: RegisteredUsersData };
+    } else if (action.type === "Logout") {
+      localStorage.removeItem("LoginData");
+      return {
+        ...State,
+        LoginUserData: {},
+      };
+    } else if (action.type === "RemoveUser") {
+      const targetUsername = action.deletedUserName;
+      const updatedRegisteredData = State.RegisterationData.filter(
+        (item) => item.username !== targetUsername
+      );
+      secureLocalStorage.setItem("registerationData", updatedRegisteredData);
+      return { ...State, RegisterationData: updatedRegisteredData };
+    } else if (action.type === "UpdateOtherTabs") {
+      return {
+        ...State,
+        LoginUserData: action?.updatedLoginData,
+      };
     }
   };
+  
   const [State, dispatch] = useReducer(handleAuth, initialVal);
-
+  useEffect(() => {
+    const handleStorageChange = (event) => {
+      if (event?.key === "LoginData" && event?.newValue) {
+        const updatedLoginData = decryptData(event?.newValue);
+        dispatch({ type: "UpdateOtherTabs", updatedLoginData });
+      }
+      // console.log(event);
+    };
+    window.addEventListener("storage", handleStorageChange);
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+    };
+  }, []);
+  useEffect(()=>{
+    console.log(State)
+  },[State])
   const AuthValues = {
-    encryptData,
-    decryptData,
     State,
     dispatch,
   };

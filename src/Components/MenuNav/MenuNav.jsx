@@ -23,7 +23,7 @@ const MenuNav = () => {
                     className="dropdown-toggle"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
-                    to={navItem.link}
+                    to={navItem?.link}
                   >
                     {navItem?.title}
                     <i className="fa-solid fa-angle-down"></i>
@@ -48,7 +48,7 @@ const MenuNav = () => {
                         );
                       }
                       // For "Registered Users" link, only show if userType is admin
-                      else if (State?.RegisteredUserData?.username === "admin") {
+                      else if (State?.LoginUserData?.username === "admin") {
                         return (
                           <li key={subLink?.id}>
                             <NavLink

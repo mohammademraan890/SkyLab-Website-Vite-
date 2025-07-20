@@ -8,7 +8,7 @@ const validationSchema = Yup.object({
     .matches(/^.{9}$/, "Password must be exactly 9 characters long")
     .required("Password is required."),
   phone: Yup.string()
-    .matches(/^[0-9]{10}$/, "Phone number must be 11 digits")
+    .matches(/^[0-9]{11}$/, "Phone number must be 11 digits")
     .required("Phone number is required"),
   DOB: Yup.date().max(new Date(), "Date cannot be in the future").required("Enter DOB first"),
   address: Yup.string().required("Enter Adress here."),

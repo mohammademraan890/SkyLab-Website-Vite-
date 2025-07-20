@@ -12,131 +12,149 @@ import {
   TextField,
 } from "@mui/material";
 import "./Profile.css";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useFormik } from "formik";
 import { toast, ToastContainer } from "react-toastify";
 
-import ProfileYup from "./ProfileYup";
-import secureLocalStorage from "react-secure-storage";
+import validationSchema from "./ProfileYup";
 import { AuthContext } from "../../Contexts/Auth";
+import IMask from "imask";
 
 const Profile = () => {
-  const {encryptData,dispatch,State} = useContext(AuthContext)
+  const { dispatch, State } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
-  const storedData = secureLocalStorage?.getItem("registrationData");
+  const { LoginUserData, RegisterationData } = State;
 
-  const profile = State?.RegisteredUserData
-  const signupFormik = useFormik({
+  const {
+    values,
+    errors,
+    touched,
+    handleChange,
+    handleSubmit,
+    setFieldError,
+    setFieldValue,
+    getFieldProps,
+    setValues,
+  } = useFormik({
     initialValues: {
       name: "",
-      username: "",
       email: "",
+      username: "",
       password: "",
       phone: "",
       DOB: "",
       address: "",
       gender: "",
+      CNIC: "", // ✅ include CNIC here too
     },
-    ProfileYup,
-    onSubmit: (values) => {
-      const isEmailExist = storedData?.some(
-        (user) => user?.email === values?.email && profile.email !== user.email
-      );
-      const isUsernameExist = storedData?.some(
-        (user) =>
-          user?.username === values?.username &&
-        user?.username !== profile?.username  
-      );
-
-      if (isEmailExist) {
-        signupFormik?.setFieldError(
-          "email",
-          "Email already exists. Please use another one."
-        );
-        return;
-      }
-      if (isUsernameExist) {
-        signupFormik?.setFieldError(
-          "username",
-          "Username already exists. Please use another one."
-        );
-        return;
-      }
+    validationSchema,
+    onSubmit: (values, action) => {
       if (
-        values?.username?.toLowerCase() === "admin" &&
-        profile?.username?.toLowerCase() !== "admin"
+        RegisterationData?.some(
+          (user) =>
+            user?.email === values?.email && LoginUserData?.email !== user.email
+        )
       ) {
-        signupFormik.setFieldError("username", "Your are not a admin.");
+        setFieldError("email", "Email already exists. Please use another one.");
         return;
       }
-      const EditLogin= {
-        name:values.name,
-        username: values.username,
-        role: values.username === "admin" ? "admin" : "user",
-        user_id: values.username === "admin" ? 1 : 0 , 
-      }
-      const encryptedLoginData= encryptData(EditLogin)
-      // console.log(encryptedLoginData)
-      localStorage?.setItem("LoginData",encryptedLoginData)
-      const updatedProfile = { ...profile, ...values };
-      const updatedData = storedData?.map((user) =>
-        user?.username === profile?.username ? updatedProfile : user
-    );
-    // console.log(updatedData);
-    // console.log(updatedProfile);
-    secureLocalStorage?.setItem("registrationData", updatedData);
-    dispatch({type:"EditProfile"})
+
+      const updatedProfile = { ...LoginUserData, ...values };
+
+      dispatch({ type: "EditProfile", updatedData: updatedProfile });
       toast.success("Your account is eddited.", {
         position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: true,
       });
-      
+      action.resetForm();
     },
-    
-    
   });
-  useEffect(()=>{
-    // console.log(profile);
-    if(profile){
-      signupFormik?.setValues(profile)
+
+  const CNICRef = useRef(null);
+  const phoneRef = useRef(null);
+
+  useEffect(() => {
+    if (CNICRef.current) {
+      const mask = IMask(CNICRef.current, {
+        mask: [
+          {
+            mask: '*****-*******-*',
+            definitions: {
+              '*': /[A-Za-z0-9@#$%-]/
+            },
+          },
+        ],
+      });
+
+      mask.on('accept', () => {
+        setFieldValue('CNIC', mask.value);
+      });
     }
-    },[profile])
-  const nameErr = signupFormik?.touched?.name && signupFormik?.errors?.name;
-  // const usernameErr =
-  //   signupFormik?.touched?.username && signupFormik?.errors?.username;
-  const emailErr = signupFormik?.touched?.email && signupFormik?.errors?.email;
-  const phoneErr = signupFormik?.touched?.phone && signupFormik?.errors?.phone;
-  const passwordErr =
-    signupFormik?.touched?.password && signupFormik?.errors?.password;
-  const addressErr =
-    signupFormik?.touched?.address && signupFormik?.errors?.address;
-  const DOBErr = signupFormik?.touched?.DOB && signupFormik?.errors?.DOB;
+    if (phoneRef.current) {
+      const mask = IMask(phoneRef.current, {
+        mask: "{+92} 000 0000000",
+        // lazy:false
+      });
+      mask.on("accept", () => {
+        setFieldValue("phone", mask.value);
+      });
+    }
+  }, []);
+
+  useEffect(() => {
+    // console.log(profile);
+    if (LoginUserData) {
+      setValues(LoginUserData);
+      phoneRef.current.value = LoginUserData.phone || "";
+      CNICRef.current.value = LoginUserData.CNIC || "";
+    }
+  }, [LoginUserData]);
+  const nameErr = touched?.name && errors?.name;
+  const usernameErr = touched?.username && errors?.username;
+  const emailErr = touched?.email && errors?.email;
+  const phoneErr = touched?.phone && errors?.phone;
+  const CNICErr = touched?.CNIC && errors?.CNIC;
+  const passwordErr = touched?.password && errors?.password;
+  const addressErr = touched?.address && errors?.address;
+  const DOBErr = touched?.DOB && errors?.DOB;
   return (
-    <div className={`loginPage FormEditPage `}>
+    <div className="loginPage FormEditPage">
       <ToastContainer />
       <div className="wraper">
         <div className="title">Profile Data</div>
-        <form onSubmit={signupFormik?.handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <div className="formRow row gap-2">
             <TextField
               className="col"
               label="Name"
               margin="dense"
               variant="outlined"
-              {...signupFormik?.getFieldProps("name")}
+              {...getFieldProps("name")}
               error={nameErr}
-              helperText={nameErr && signupFormik?.errors?.name}
+              helperText={nameErr && errors?.name}
             />
-           
+            <TextField
+              className="col"
+              label="Username"
+              margin="dense"
+              variant="outlined"
+              {...getFieldProps("username")}
+              error={usernameErr}
+              helperText={usernameErr && errors?.username}
+              disabled
+            />
+
             <TextField
               className="col"
               label="Email"
               type="email"
               margin="dense"
               variant="outlined"
-              {...signupFormik?.getFieldProps("email")}
+              {...getFieldProps("email")}
               error={emailErr}
-              helperText={emailErr && signupFormik?.errors?.email}
+              helperText={emailErr && errors?.email}
             />
           </div>
           <div className="row gap-2">
@@ -152,7 +170,7 @@ const Profile = () => {
               </InputLabel>
               <OutlinedInput
                 type={showPassword ? "text" : "password"}
-                {...signupFormik?.getFieldProps("password")}
+                {...getFieldProps("password")}
                 endAdornment={
                   <InputAdornment position="end">
                     <IconButton
@@ -173,22 +191,33 @@ const Profile = () => {
                 }
                 label="Password"
               />
-              <FormHelperText>
-                {passwordErr && signupFormik?.errors?.password}
-              </FormHelperText>
+              <FormHelperText>{passwordErr && errors?.password}</FormHelperText>
             </FormControl>
+            <TextField
+              name="CNIC"
+              inputRef={CNICRef}
+              className="col"
+              type="text"
+              label="CNIC"
+              margin="dense"
+              variant="outlined"
+              placeholder="XXXXX-XXXXXXX-X"
+              error={CNICErr}
+              helperText={CNICErr && errors.CNIC}
+            />
           </div>
           <div className="formRow row gap-2">
             <TextField
-              className="col"
+              name="phone"
+              inputRef={phoneRef}
               label="Phone Number"
-              type="number"
               margin="dense"
+              className="col"
               variant="outlined"
-              {...signupFormik?.getFieldProps("phone")}
               error={phoneErr}
-              helperText={phoneErr && signupFormik?.errors?.phone}
+              helperText={phoneErr && errors.phone}
             />
+
             <TextField
               className="col"
               label="Date of Birth"
@@ -196,9 +225,9 @@ const Profile = () => {
               margin="dense"
               variant="outlined"
               InputLabelProps={{ shrink: true }}
-              {...signupFormik?.getFieldProps("DOB")}
+              {...getFieldProps("DOB")}
               error={DOBErr}
-              helperText={DOBErr && signupFormik?.errors?.DOB}
+              helperText={DOBErr && errors?.DOB}
             />
           </div>
           <TextField
@@ -208,24 +237,21 @@ const Profile = () => {
             type="text"
             margin="dense"
             variant="outlined"
-            {...signupFormik?.getFieldProps("address")}
+            {...getFieldProps("address")}
             error={addressErr}
-            helperText={addressErr && signupFormik?.errors?.address}
+            helperText={addressErr && errors?.address}
           />
           <FormControl
             component="fieldset"
             margin="dense"
-            error={
-              signupFormik?.touched?.gender &&
-              Boolean(signupFormik?.errors?.gender)
-            }
+            error={touched?.gender && Boolean(errors?.gender)}
           >
             <FormLabel component="legend">Gender</FormLabel>
             <RadioGroup
               row
               name="gender"
-              value={signupFormik?.values?.gender}
-              onChange={signupFormik?.handleChange}
+              value={values?.gender}
+              onChange={handleChange}
             >
               <FormControlLabel value="male" control={<Radio />} label="Male" />
               <FormControlLabel
@@ -239,9 +265,7 @@ const Profile = () => {
                 label="Other"
               />
             </RadioGroup>
-            <FormHelperText>
-              {signupFormik?.touched?.gender && signupFormik?.errors?.gender}
-            </FormHelperText>
+            <FormHelperText>{touched?.gender && errors?.gender}</FormHelperText>
           </FormControl>
 
           <div className="field">

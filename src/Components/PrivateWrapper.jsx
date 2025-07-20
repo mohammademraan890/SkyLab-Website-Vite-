@@ -35,6 +35,7 @@ const PrivateWrapper = () => {
     <>
       {allowed && <Header />}
       <Outlet />
+      
       {allowed && <TestimonialSec />}
       {allowed && <FooterTop />}
       {allowed && <FooterBtm />}

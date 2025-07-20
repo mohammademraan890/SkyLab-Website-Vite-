@@ -1,23 +1,25 @@
 import { DeleteForeverOutlined } from "@mui/icons-material";
 import { Fab } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import secureLocalStorage from "react-secure-storage";
+import { AuthContext } from "../../Contexts/Auth";
 
 const RegisteredUsers = () => {
     // const registerData = secureLocalStorage.getItem("registrationData");
-  const [users, setUsers] = useState(
-    secureLocalStorage?.getItem("registrationData")
-  );
-  useEffect(() => {
-    secureLocalStorage?.setItem("registrationData", users);
-    setUsers(users);
-  }, [users]);
+    const {State,dispatch} = useContext(AuthContext)
+  // const [users, setUsers] = useState(
+  //   secureLocalStorage?.getItem("registrationData")
+  // );
+  // useEffect(() => {
+  //   secureLocalStorage?.setItem("registrationData", users);
+  //   setUsers(users);
+  // }, [users]);
 //   console.log(registerData)
   return (
     <div className="container my-5">
       <table className="table mx-auto table-bordered">
         <thead>
-          <tr>
+          <tr style={{verticalAlign:"center"}}>
             <th>Sr#</th>
             <th>Name</th>
             <th>Username</th>
@@ -31,7 +33,7 @@ const RegisteredUsers = () => {
           </tr>
         </thead>
         <tbody>
-          {users?.map((userRow, index) => {
+          {State?.RegisterationData?.map((userRow, index) => {
             return (
               userRow?.username !== "admin" && (
                 <tr key={index}>
@@ -54,10 +56,11 @@ const RegisteredUsers = () => {
                       }}
                       size="small"
                       onClick={() => {
-                        const filteredData = users?.filter(
-                          (userData) => userData?.username !== userRow?.username
-                        );
-                        setUsers(filteredData);
+                        // const filteredData = users?.filter(
+                        //   (userData) => userData?.username !== userRow?.username
+                        // );
+                        // setUsers(filteredData);
+                        dispatch({type:"RemoveUser", deletedUserName: userRow.username })
                       }}
                     >
                       <DeleteForeverOutlined />
